@@ -1,84 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
     <category>
-        <pattern>WHAT ARE CREDITS</pattern>
+        <pattern>^ ARE CREDITS ^</pattern>
         <template>
             <think><set name="topic">credits</set></think>
-            <srai>WHAT IS IT</srai>
+            <srai><star/> ARE THEY <star index="2"/></srai>
         </template>
     </category>
     
     <category>
-        <pattern>* CREDITS * NEEDED ^</pattern>
+        <pattern>^ MANY CREDITS ^</pattern>
         <template>
-            <srai><star/> CREDITS <star index="2"/> NEED <star index="3"/></srai>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> MANY OF THEM <star index="2"/></srai>
         </template>
     </category>
     
     <category>
-        <pattern>* CREDITS * HAVE TO EARN ^</pattern>
+        <pattern>^ OF CREDITS ^</pattern>
         <template>
-            <srai><star/> CREDITS <star index="2"/> NEED <star index="3"/></srai>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> OF THEM <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ ABOUT CREDITS ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> ABOUT THEM <star index="2"/></srai>
         </template>
     </category>
 
     <category>
-        <pattern>* CREDITS * HAVE TO GET ^</pattern>
-        <template>
-            <srai><star/> CREDITS <star index="2"/> NEED <star index="3"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>* CREDITS * NEED ^</pattern>
+        <pattern>* CREDITS</pattern>
         <template>
             <think><set name="topic">credits</set></think>
-            <srai><star/> OF THEM <star index="2"/> NEED <star index="3"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>* EARN CREDITS ^</pattern>
-        <template>
-            <think><set name="topic">credits</set></think>
-            <srai><star/> EARN THEM <star index="2"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>HOW * GET CREDITS ^</pattern>
-        <template>
-            <srai><star/> EARN CREDITS <star index="2"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>* CREDITS * YOU RECOMMEND ^</pattern>
-        <template>
-            <think><set name="topic">credits</set></think>
-            <srai><star/> THEM <star index="2"/> YOU RECOMMEND <star index="3"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>* CREDITS * RECOMMENDED ^</pattern>
-        <template>
-            <think><set name="topic">credits</set></think>
-            <srai><star/> THEM <star index="2"/> RECOMMENDED <star index="3"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>* RECOMMENDED * CREDITS ^</pattern>
-        <template>
-            <think><set name="topic">credits</set></think>
-            <srai><star/> RECOMMENDED <star index="2"/> THEM <star index="3"/></srai>
+            <srai><star/> THEM</srai>
         </template>
     </category>
     
 	<topic name="credits">
 	    <category>
-	        <pattern>WHAT IS IT</pattern>
+	        <pattern>^ WHAT ^ IS IT ^</pattern>
+	        <template><srai>WHAT ARE THEY</srai></template>
+        </category>
+
+	    <category>
+	        <pattern>^ WHAT ^ ARE THEY ^</pattern>
 	        <template>
                 <srai>HOW DO I EARN THEM</srai>
                 <delay>1</delay>
@@ -87,13 +56,48 @@
 	        </template>
         </category>
 
+	    <category>
+	        <pattern>* THEY ^ IMPORTANT ^</pattern>
+	        <template>
+                They are important because if you don't earn enough of them, you may not be allowed to continue studying.
+	        </template>
+        </category>
+
         <category>
-            <pattern>HOW MANY * NEED</pattern>
+            <pattern>^ HOW MANY * NEED</pattern>
             <template>
                 <srai>WHAT NUMBER OF THEM DO I NEED</srai>
             </template>
         </category>
 
+        <category>
+            <pattern>^ HOW MANY * NEEDED</pattern>
+            <template>
+                <srai>WHAT NUMBER OF THEM DO I NEED</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>* OF THEM * NEEDED</pattern>
+            <template>
+                <srai>WHAT NUMBER OF THEM DO I NEED</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>* OF THEM * NEED _ SEMESTER ^</pattern>
+            <template>
+                You must successfully complete the courses for 20 credits for the past semester or 45 credits for the two past semesters in order to continue studying, so keep the number of credits in reserve.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* OF THEM * NEED _ STUDY ^</pattern>
+            <template>
+                For admission to the Final State Exam, you need to earn at least 180 credits (in bachelor's degree).
+            </template>
+        </category>
+    
         <category>
             <pattern>* OF THEM * NEED ^</pattern>
             <template>
@@ -105,17 +109,8 @@
         </category>
         
         <category>
-            <pattern>* OF THEM * NEED PER SEMESTER ^</pattern>
-            <template>
-                You must successfully complete the courses for 20 credits for the past semester or 45 credits for the two past semesters in order to continue studying, so keep the number of credits in reserve.
-            </template>
-        </category>
-        
-        <category>
-            <pattern>* OF THEM * NEED PER STUDY ^</pattern>
-            <template>
-                For admission to the Final State Exam, you need to earn at least 180 credits (in bachelor's degree).
-            </template>
+            <pattern>* GET THEM ^</pattern>
+            <template><srai>HOW CAN I EARN THEM</srai></template>
         </category>
         
         <category>

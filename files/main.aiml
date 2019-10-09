@@ -9,7 +9,7 @@
 	            <li>Hello</li>
 	        </random>!
 	        <break/>
-	        My name is <bot name="name"/> and my task is to help freshmen with frequently asked questions about the registration and enrollment of courses, seminar groups, credits, exams, etc...
+	        My name is <bot name="name"/> and my task is to help freshmen with understanding credits, enrollment of the courses, etc.
 	        <split/>
             <srai>POLL</srai>
         </template>

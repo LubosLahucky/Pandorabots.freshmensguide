@@ -7,5 +7,18 @@
 	            <!-- TODO -->
 	        </template>
         </category>
+        
+        <category>
+            <pattern>WHO ^ TEACHES THEM</pattern>
+            <template>
+                
+            </template>
+        </category>
+        
+        <category>
+            <pattern></pattern>
+            <template></template>
+        </category>
 	</topic>
 </aiml>
+

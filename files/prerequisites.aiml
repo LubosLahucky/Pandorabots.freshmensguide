@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
     <category>
-        <pattern>WHAT ARE PREREQUISITES</pattern>
+        <pattern>^ ARE PREREQUISITES *</pattern>
         <template>
             <think><set name="topic">prerequisites</set></think>
-            <srai>WHAT IS IT</srai>
+            <srai><star/> ARE THEY <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* PREREQUISITES</pattern>
+        <template>
+            <think><set name="topic">prerequisites</set></think>
+            <srai><star/> THEM <star index="2"/></srai>
         </template>
     </category>
     
 	<topic name="prerequisites">
 	    <category>
-	        <pattern>WHAT IS IT</pattern>
+	        <pattern>WHAT ARE THEY</pattern>
 	        <template>
-	            The prerequisite of the subject is a condition that must be met in order to enroll the subject
+	            The prerequisite of the subject is a condition that must be met in order to enroll the subject.
 	        </template>
+        </category>
+	    
+	    <category>
+	        <pattern>WHAT IS IT</pattern>
+	        <template><srai>WHAT ARE THEY</srai></template>
         </category>
 	</topic>
 </aiml>

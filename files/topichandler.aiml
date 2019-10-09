@@ -94,24 +94,4 @@
         <pattern>^ ALL YOU CAN DO</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
-
-    <category>
-        <pattern>XARTICLE *</pattern>
-        <template><star/></template>
-    </category>
-    
-    <category>
-        <pattern>XARTICLE A *</pattern>
-        <template><star/></template>
-    </category>
-    
-    <category>
-        <pattern>XARTICLE AN *</pattern>
-        <template><star/></template>
-    </category>
-    
-    <category>
-        <pattern>XARTICLE THE *</pattern>
-        <template><star/></template>
-    </category>
 </aiml>
