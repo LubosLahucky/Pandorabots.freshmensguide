@@ -8,6 +8,14 @@
         </template>
     </category>
     
+    <category>
+        <pattern>HOW DO EXAMS LOOK LIKE</pattern>
+        <template>
+            <think><set name="topic">exams</set></think>
+            <srai>HOW DO THEY LOOK LIKE</srai>  
+        </template>
+    </category>
+    
 	<topic name="exams">
 	    <category>
 	        <pattern>WHAT IS IT</pattern>
@@ -15,5 +23,16 @@
 	            <!-- TODO -->
 	        </template>
         </category>
+        
+        <category>
+            <pattern>HOW DO THEY LOOK LIKE</pattern>
+            <template>
+                Generally, the exams on Faculty of Informatics are written.
+                Written exam can contain both open and multichoice questions, depending on the course.
+                I recommend paying attention on the first lecture of the course - the form of exam is usually presented there.
+            </template>
+        </category>
+        
+        
 	</topic>
 </aiml>

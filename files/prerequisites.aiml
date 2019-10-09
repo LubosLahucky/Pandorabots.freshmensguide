@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>WHAT ARE PREREQUISITES</pattern>
+        <template>
+            <think><set name="topic">prerequisites</set></think>
+            <srai>WHAT IS IT</srai>
+        </template>
+    </category>
+    
+	<topic name="prerequisites">
+	    <category>
+	        <pattern>WHAT IS IT</pattern>
+	        <template>
+	            The prerequisite of the subject is a condition that must be met in order to enroll the subject
+	        </template>
+        </category>
+	</topic>
+</aiml>

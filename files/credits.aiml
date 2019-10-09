@@ -8,12 +8,144 @@
         </template>
     </category>
     
+    <category>
+        <pattern>* CREDITS * NEEDED ^</pattern>
+        <template>
+            <srai><star/> CREDITS <star index="2"/> NEED <star index="3"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* CREDITS * HAVE TO EARN ^</pattern>
+        <template>
+            <srai><star/> CREDITS <star index="2"/> NEED <star index="3"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* CREDITS * HAVE TO GET ^</pattern>
+        <template>
+            <srai><star/> CREDITS <star index="2"/> NEED <star index="3"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* CREDITS * NEED ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> OF THEM <star index="2"/> NEED <star index="3"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* EARN CREDITS ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> EARN THEM <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>HOW * GET CREDITS ^</pattern>
+        <template>
+            <srai><star/> EARN CREDITS <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* CREDITS * YOU RECOMMEND ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> THEM <star index="2"/> YOU RECOMMEND <star index="3"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* CREDITS * RECOMMENDED ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> THEM <star index="2"/> RECOMMENDED <star index="3"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* RECOMMENDED * CREDITS ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> RECOMMENDED <star index="2"/> THEM <star index="3"/></srai>
+        </template>
+    </category>
+    
 	<topic name="credits">
 	    <category>
 	        <pattern>WHAT IS IT</pattern>
-	        <template>Credits are gained for finishing courses successfully. 
-	        <break/>You need some amount of them to advance to the next semester and to finish your studies successfully
+	        <template>
+                <srai>HOW DO I EARN THEM</srai>
+                <delay>1</delay>
+                <split/>
+                <srai>HOW MANY OF THEM DO I NEED</srai>
 	        </template>
+        </category>
+
+        <category>
+            <pattern>HOW MANY * NEED</pattern>
+            <template>
+                <srai>WHAT NUMBER OF THEM DO I NEED</srai>
+            </template>
+        </category>
+
+        <category>
+            <pattern>* OF THEM * NEED ^</pattern>
+            <template>
+                <srai><star/> OF THEM <star index="2"/> NEED PER SEMESTER</srai>
+                <delay>1</delay>
+                <split/>
+                <srai><star/> OF THEM <star index="2"/> NEED PER STUDY</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* OF THEM * NEED PER SEMESTER ^</pattern>
+            <template>
+                You must successfully complete the courses for 20 credits for the past semester or 45 credits for the two past semesters in order to continue studying, so keep the number of credits in reserve.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* OF THEM * NEED PER STUDY ^</pattern>
+            <template>
+                For admission to the Final State Exam, you need to earn at least 180 credits (in bachelor's degree).
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* EARN THEM ^</pattern>
+            <template>
+                Each course in the whole MU has a certain number of credits, which you get for passing it.
+                <break/>
+                If the course is worth 5 credits, it means that a student is expected to spend 5 hours per week on the course.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* THEM * YOU RECOMMEND ^</pattern>
+            <template>
+                I personally recommend enrolling courses worth 35 credits, so that you can enroll fewer courses in your last semester.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* THEM * RECOMMENDED ^</pattern>
+            <template>
+                The recommended number of credits per semester is 30.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* RECOMMENDED * THEM ^</pattern>
+            <template>
+                The recommended number of credits per semester is 30.
+            </template>
         </category>
 	</topic>
 </aiml>
