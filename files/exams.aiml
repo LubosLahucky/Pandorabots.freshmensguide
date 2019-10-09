@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>WHAT ARE EXAMS</pattern>
+        <template>
+            <think><set name="topic">exams</set></think>
+            <srai>WHAT IS IT</srai>
+        </template>
+    </category>
+    
+	<topic name="exams">
+	    <category>
+	        <pattern>WHAT IS IT</pattern>
+	        <template>
+	            <!-- TODO -->
+	        </template>
+        </category>
+	</topic>
+</aiml>

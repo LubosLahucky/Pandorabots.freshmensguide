@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <random>
+	            <li>Hi</li>
+	            <li>Hello</li>
+	        </random>!
+	        <break/>
+	        My name is <bot name="name"/> and my task is to help freshmen with frequently asked questions about the registration and enrollment of courses, seminar groups, credits, exams, etc...
+	        <split/>
+            <srai>POLL</srai>
+        </template>
+    </category>
+
+	<category>
+	    <pattern><set>greetings</set></pattern>
+	    <template>
+	        <srai>HI</srai>
+	    </template>
+    </category>
+    
+	<category>
+	    <pattern><set>greetings</set> ^</pattern>
+	    <template>
+	        <srai>HI</srai>
+	    </template>
+    </category>
+    
+    <category>
+        <pattern>POLL</pattern>
+        <template>
+            <random>
+	            <li>How can I help you</li>
+	            <li>Do you need my help</li>
+	            <li>Would you like to ask me something</li>
+	        </random>
+	        ?            
+        </template>
+    </category>
+
+    <category>
+        <pattern>PING</pattern>
+        <template>
+            Pong!
+            <split/>
+            <srai>POLL</srai>
+	    </template>
+    </category>
+    
+    <category>
+        <pattern>^ ARE YOU THERE ^</pattern>
+        <template>
+            Yes, I'm here.
+            <split/>
+            <srai>POLL</srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ ARE YOU HERE ^</pattern>
+        <template>
+            Yes, I'm here.
+            <split/>
+            <srai>POLL</srai></template>
+    </category>
+
+    <category>
+        <pattern>^ WAKE UP ^</pattern>
+        <template>
+            I'm awake!
+            <split/>
+            <srai>POLL</srai>
+        </template>
+    </category>
+</aiml>

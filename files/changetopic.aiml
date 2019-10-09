@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>^ HELP ME WITH SOMETHING</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+    
+    <category>
+	    <pattern>HELP ME WITH <set>topics</set></pattern>
+	    <template>
+	        <think><set name="topic"><srai>XARTICLE <star/></srai></set></think>
+	        Do you have any specific questions about it?
+	    </template>
+    </category>
+    
+	<category>
+	    <pattern>HELP ME WITH *</pattern>
+	    <template>
+	        <think><set name="topic"><srai>XARTICLE <star/></srai></set></think>
+	        Well, I can try to help you, but I do not think I will be very helpful in this area.
+	        I can only help you with:
+            <break/>
+            <srai>ENUMERATE TOPICS</srai>
+	    </template>
+    </category>
+    
+    <category>
+        <pattern>* HELP ME WITH * ^</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* QUESTION ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* TALK ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>ENUMERATE TOPICS</pattern>
+        <template>
+            <think><set name="currenttopic">START</set></think>
+            <set name="currenttopic">
+                <map name="topicenumerator">
+                    <get name="currenttopic"/>
+                </map>
+            </set>
+            <condition name="currenttopic">
+                <li value="english"> and that's all!</li>
+                <li>, <set name="currenttopic"><map name="topicenumerator"><get name="currenttopic"/></map></set><loop/></li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT CAN YOU DO</pattern>
+        <template>
+            I can help freshmen with:
+            <break/>
+            <srai>ENUMERATE TOPICS</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT * TALK ABOUT</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT * ASK YOU</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT * YOU KNOW</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>^ ALL YOU KNOW</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>^ ALL YOU CAN DO</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>XARTICLE *</pattern>
+        <template><star/></template>
+    </category>
+    
+    <category>
+        <pattern>XARTICLE A *</pattern>
+        <template><star/></template>
+    </category>
+    
+    <category>
+        <pattern>XARTICLE AN *</pattern>
+        <template><star/></template>
+    </category>
+    
+    <category>
+        <pattern>XARTICLE THE *</pattern>
+        <template><star/></template>
+    </category>
+</aiml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>WHAT ARE CREDITS</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai>WHAT IS IT</srai>
+        </template>
+    </category>
+    
+	<topic name="credits">
+	    <category>
+	        <pattern>WHAT IS IT</pattern>
+	        <template>Credits are gained for finishing courses successfully. 
+	        <break/>You need some amount of them to advance to the next semester and to finish your studies successfully
+	        </template>
+        </category>
+	</topic>
+</aiml>
