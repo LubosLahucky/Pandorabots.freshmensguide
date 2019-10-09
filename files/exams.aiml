@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
     <category>
-        <pattern>WHAT ARE EXAMS</pattern>
+        <pattern>^ ARE EXAMS ^</pattern>
         <template>
             <think><set name="topic">exams</set></think>
-            <srai>WHAT IS IT</srai>
+            <srai><star/> ARE THEY <star index="2"/></srai>
         </template>
     </category>
     
     <category>
-        <pattern>HOW DO EXAMS LOOK LIKE</pattern>
+        <pattern>^ EXAMS LOOK ^</pattern>
         <template>
             <think><set name="topic">exams</set></think>
-            <srai>HOW DO THEY LOOK LIKE</srai>  
+            <srai><star/> THEY LOOK <star index="2"/></srai>  
         </template>
     </category>
     
 	<topic name="exams">
 	    <category>
-	        <pattern>WHAT IS IT</pattern>
-	        <template>
-	            <!-- TODO -->
-	        </template>
+	        <pattern>^ WHAT ^ IS IT ^</pattern>
+	        <template><srai>WHAT ARE THEY</srai></template>
         </category>
         
         <category>
-            <pattern>HOW DO THEY LOOK LIKE</pattern>
+	        <pattern>^ WHAT ^ ARE THEY ^</pattern>
+	        <template>
+	            Some courses are finished by an exam. Generally, your performance on the exam influences your final grade more than your work during the semester.
+	        </template>
+	    </category>
+	    
+        <category>
+            <pattern>^ THEY LOOK ^</pattern>
             <template>
-                Generally, the exams on Faculty of Informatics are written.
-                Written exam can contain both open and multichoice questions, depending on the course.
-                I recommend paying attention on the first lecture of the course - the form of exam is usually presented there.
+                Generally, the exams in The Faculty of Informatics are written.
+                <button>
+                    <text>Here is an example of the written exam.</text>
+                    <url>https://is.muni.cz/auth/el/fi/podzim2017/IB102/um/termin1_2011.pdf</url>
+                </button>
             </template>
         </category>
         
