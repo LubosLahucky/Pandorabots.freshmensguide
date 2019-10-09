@@ -17,10 +17,10 @@
     </category>
     
     <category>
-        <pattern>^ OF CREDITS ^</pattern>
+        <pattern>^ OF * CREDITS ^</pattern>
         <template>
             <think><set name="topic">credits</set></think>
-            <srai><star/> OF THEM <star index="2"/></srai>
+            <srai><star/> OF THEM <star index="3"/></srai>
         </template>
     </category>
     
@@ -99,6 +99,11 @@
         </category>
     
         <category>
+            <pattern>* MAXIMUM * OF THEM ^</pattern>
+            <template>There is a limit of 60 credits per semester. However, this is far above the recommended number of credits per semester.</template>
+        </category>
+    
+        <category>
             <pattern>* OF THEM * NEED ^</pattern>
             <template>
                 <srai><star/> OF THEM <star index="2"/> NEED PER SEMESTER</srai>
@@ -143,4 +148,5 @@
             </template>
         </category>
 	</topic>
+
 </aiml>

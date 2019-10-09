@@ -71,6 +71,18 @@
     </category>
     
     <category>
+        <that>DO YOU NEED MY HELP</that>
+        <pattern>YES</pattern>
+        <template>WHAT CAN YOU DO</template>
+    </category>
+
+    <category>
+        <that>WOULD YOU LIKE TO ASK ME SOMETHING</that>
+        <pattern>YES</pattern>
+        <template>WHAT CAN YOU DO</template>
+    </category>
+
+    <category>
         <pattern>WHAT * TALK ABOUT</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
