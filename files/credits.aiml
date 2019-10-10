@@ -32,6 +32,7 @@
         </template>
     </category>
     
+    <!--
     <category>
         <pattern>* OF * CREDITS ^</pattern>
         <template>
@@ -39,7 +40,7 @@
             <srai><star/> OF THEM <star index="3"/></srai>
         </template>
     </category>
-    
+    -->
 	<topic name="credits">
 	    <category>
 	        <pattern>^ WHAT ^ IS IT ^</pattern>
