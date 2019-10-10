@@ -74,5 +74,19 @@
             <srai>POLL</srai>
         </template>
     </category>
-
+    
+    <category>
+        <pattern>_ PLEASE ^</pattern>
+        <template>
+            <random>
+                <li>Thank you for your politeness.</li>
+                <li>I like your politeness.</li>
+                <li>If only more people were like you.</li>
+                <li>Many people forget about the word "please" when they ask for my help these days.</li>
+            </random>
+	        <delay>1</delay>
+	        <split/>
+	        <srai><star/> <star index="2"/></srai>
+        </template>
+    </category>
 </aiml>

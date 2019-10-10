@@ -7,6 +7,22 @@
             <srai><star/> ARE THEY <star index="2"/></srai>
         </template>
     </category>
+
+    <category>
+        <pattern>^ CHEAT ^ EXAMS ^</pattern>
+        <template>
+            <think><set name="topic">exams</set></think>
+            <srai>CHEATING</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>^ CHEATING ^ EXAMS ^</pattern>
+        <template>
+            <think><set name="topic">exams</set></think>
+            <srai>CHEATING</srai>
+        </template>
+    </category>
     
     <category>
         <pattern>^ EXAMS LOOK ^</pattern>
@@ -25,7 +41,9 @@
         <category>
 	        <pattern>^ WHAT ^ ARE THEY ^</pattern>
 	        <template>
-	            Some courses are finished by an exam. Generally, your performance on the exam influences your final grade more than your work during the semester.
+	            Some courses are finished by an exam at the end of semester. 
+	            <break/>
+	            Generally, your performance on the exam influences your final grade more than your work during the semester.
 	        </template>
 	    </category>
 	    
@@ -40,6 +58,9 @@
             </template>
         </category>
         
-        
+        <category>
+            <pattern>^ CHEATING ^</pattern>
+            <template>Cheating during exams is STRICTLY forbidden. You may have serious trouble when you get caught.</template>
+        </category>
 	</topic>
 </aiml>

@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+
     <category>
-        <pattern>^ HELP ME WITH SOMETHING</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
+        <pattern>_ HELP ME WITH *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ HELPING ME WITH *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ QUESTION ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
     </category>
     
     <category>
-	    <pattern>HELP ME WITH <set>topics</set></pattern>
+        <pattern>_ TALK ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ ASK ^ ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="3"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* ASK ^ QUESTION ^</pattern>
+        <template>Sure, feel free to ask me.</template>
+    </category>
+    
+    <category>
+        <pattern>* HAVE ^ QUESTION ^</pattern>
+        <template>Feel free to ask me then.</template>
+    </category>
+
+    <category>
+        <pattern>^ HELP ME ^</pattern>
+        <template>How could I help you?</template>
+    </category>
+
+    <category>
+        <pattern># HELP ME WITH SOMETHING ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+	    <pattern>HELP ME WITH ^ <set>topics</set> ^</pattern>
 	    <template>
-	        <think><set name="topic"><srai>XARTICLE <star/></srai></set></think>
+	        <think><set name="topic"><star index="2"/></set></think>
 	        Do you have any specific questions about it?
 	    </template>
     </category>
@@ -22,27 +73,6 @@
             <break/>
             <srai>ENUMERATE TOPICS</srai>
 	    </template>
-    </category>
-    
-    <category>
-        <pattern>* HELP ME WITH * ^</pattern>
-        <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>* QUESTION ABOUT *</pattern>
-        <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>* TALK ABOUT *</pattern>
-        <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
-        </template>
     </category>
     
     <category>
@@ -71,17 +101,37 @@
     </category>
     
     <category>
-        <that>DO YOU NEED MY HELP</that>
-        <pattern>YES</pattern>
-        <template>WHAT CAN YOU DO</template>
+        <that>^ DO YOU NEED MY HELP</that>
+        <pattern>YES ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
 
     <category>
-        <that>WOULD YOU LIKE TO ASK ME SOMETHING</that>
-        <pattern>YES</pattern>
-        <template>WHAT CAN YOU DO</template>
+        <that>^ WOULD YOU LIKE TO ASK ME SOMETHING</that>
+        <pattern>YES ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
 
+    <category>
+        <that>^ DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
+        <pattern>YES ^</pattern>
+        <template><srai>I HAVE A QUESTION</srai></template>
+    </category>
+
+    <category>
+        <that>^ DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
+        <pattern>NO ^</pattern>
+        <template>
+            I can tell you what it is then.
+            <delay>1</delay>
+            <split/>
+            <srai>WHAT IS IT</srai>
+            <delay>1</delay>
+            <split/>
+            Feel free to ask more questions about it.
+        </template>
+    </category>
+    
     <category>
         <pattern>WHAT * TALK ABOUT</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>

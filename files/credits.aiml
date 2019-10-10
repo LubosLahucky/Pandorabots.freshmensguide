@@ -9,7 +9,23 @@
     </category>
     
     <category>
-        <pattern>^ MANY CREDITS ^</pattern>
+        <pattern>* THE CREDITS ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> THEY <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* CREDITS ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/> THEM <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* MANY CREDITS ^</pattern>
         <template>
             <think><set name="topic">credits</set></think>
             <srai><star/> MANY OF THEM <star index="2"/></srai>
@@ -17,26 +33,10 @@
     </category>
     
     <category>
-        <pattern>^ OF * CREDITS ^</pattern>
+        <pattern>* OF * CREDITS ^</pattern>
         <template>
             <think><set name="topic">credits</set></think>
             <srai><star/> OF THEM <star index="3"/></srai>
-        </template>
-    </category>
-    
-    <category>
-        <pattern>^ ABOUT CREDITS ^</pattern>
-        <template>
-            <think><set name="topic">credits</set></think>
-            <srai><star/> ABOUT THEM <star index="2"/></srai>
-        </template>
-    </category>
-
-    <category>
-        <pattern>* CREDITS</pattern>
-        <template>
-            <think><set name="topic">credits</set></think>
-            <srai><star/> THEM</srai>
         </template>
     </category>
     
@@ -144,7 +144,7 @@
         <category>
             <pattern>* RECOMMENDED * THEM ^</pattern>
             <template>
-                The recommended number of credits per semester is 30.
+                <srai>HOW MANY OF THEM IS RECOMMENDED</srai>
             </template>
         </category>
 	</topic>

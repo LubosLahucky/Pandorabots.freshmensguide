@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+    
+    <category>
+        <pattern>_ WITH REGISTRATION ^</pattern>
+        <template>
+            <think><set name="registration">exams</set></think>
+            <srai><star/> WITH IT <star/></srai>
+        </template>
+    </category>
+    
 	<topic name="registration">
 	    <category>
 	        <pattern>WHAT IS IT</pattern>
 	        <template>
 	            <!-- https://is.muni.cz/napoveda/student/registrace -->
 	        </template>
+        </category>
+        
+        <category>
+            <pattern>^ HELP ^ WITH IT ^</pattern>
+            <template>
+                <!-- TODO -->
+                I will be able to help you with it in future.
+            </template>
         </category>
 	</topic>
 </aiml>
