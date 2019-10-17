@@ -32,15 +32,6 @@
         </template>
     </category>
     
-    <!--
-    <category>
-        <pattern>* OF * CREDITS ^</pattern>
-        <template>
-            <think><set name="topic">credits</set></think>
-            <srai><star/> OF THEM <star index="3"/></srai>
-        </template>
-    </category>
-    -->
 	<topic name="credits">
 	    <category>
 	        <pattern>^ WHAT ^ IS IT ^</pattern>
@@ -88,7 +79,7 @@
         <category>
             <pattern>* OF THEM * NEED _ SEMESTER ^</pattern>
             <template>
-                You must successfully complete the courses for 20 credits for the past semester or 45 credits for the two past semesters in order to continue studying, so keep the number of credits in reserve.
+                You must successfully complete the courses worth 20 credits for the past semester or 45 credits for the two past semesters in order to continue studying, so keep the number of credits in reserve.
             </template>
         </category>
         

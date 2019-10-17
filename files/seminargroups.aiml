@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+
+    <category>
+        <pattern>^ ARE SEMINAR GROUPS ^</pattern>
+        <template>
+            <think><set name="topic">seminar groups</set></think>
+            <srai><star/> ARE THEY <star index="2"/></srai>
+        </template>
+    </category>
+
     <topic name="seminar groups">
 	    <category>
-	        <pattern>WHAT IS IT</pattern>
+	        <pattern>^ WHAT IS IT ^</pattern>
 	        <template>
-	            <!-- TODO -->
+	            <srai>WHAT ARE THEY</srai>
 	        </template>
+        </category>
+        
+        <category>
+            <pattern>^ WHAT ARE THEY ^</pattern>
+            <template>
+                Some courses have more students than the capacity of the room where practical seminars take place.
+                Therefore, it is needed to divide students into smaller groups - seminar groups.
+                Students of the same seminar group attend seminars together in the room and time assigned to their seminar group.
+            </template>
         </category>
         
         <category>
             <pattern>WHO ^ TEACHES THEM</pattern>
             <template>
-                
+                TODO
             </template>
         </category>
         
-        <category>
-            <pattern></pattern>
-            <template></template>
-        </category>
 	</topic>
 </aiml>
 

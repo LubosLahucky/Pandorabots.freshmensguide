@@ -2,27 +2,124 @@
 <aiml version="2.0">
     
     <category>
-        <pattern>_ WITH REGISTRATION ^</pattern>
+        <pattern>^ WHEN ^ REGISTER ^</pattern>
         <template>
-            <think><set name="registration">exams</set></think>
-            <srai><star/> WITH IT <star/></srai>
+            <think><set name="topic">registration</set></think>
+            <srai>WHEN DOES IT START</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ HAVE TO REGISTER ^</pattern>
+        <template><srai><star/> NEED REGISTRATION <star index="2"/></srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ TO REGISTER ^</pattern>
+        <template><srai><star/> REGISTRATION <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>* A REGISTRATION ^</pattern>
+        <template>
+            <think><set name="topic">registration</set></think>
+            <srai><star/> IT <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* THE REGISTRATION ^</pattern>
+        <template>
+            <think><set name="topic">registration</set></think>
+            <srai><star/> IT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* REGISTRATION ^</pattern>
+        <template>
+            <think><set name="topic">registration</set></think>
+            <srai><star/> IT <star index="2"/></srai>
         </template>
     </category>
     
 	<topic name="registration">
 	    <category>
-	        <pattern>WHAT IS IT</pattern>
-	        <template>
-	            <!-- https://is.muni.cz/napoveda/student/registrace -->
-	        </template>
+	        <pattern>^ WHAT IS IT ^</pattern>
+	        <template>By registering a course, you express your interest in this course. <srai>WHAT IS IT GOOD FOR</srai></template>
         </category>
         
         <category>
-            <pattern>^ HELP ^ WITH IT ^</pattern>
-            <template>
-                <!-- TODO -->
-                I will be able to help you with it in future.
-            </template>
+            <pattern>^ WHAT IS IT GOOD FOR ^</pattern>
+            <template>When the number of students who want to enroll a course with limited capacity exceeds its capacity, the students who registered the course first will be favored.</template>
         </category>
+        
+        <category>
+            <pattern>* BENEFITS OF IT ^</pattern>
+            <template><srai>WHAT IS IT GOOD FOR</srai></template>
+        </category>
+        
+        <category>
+            <pattern>* NEED IT ^</pattern>
+            <template><srai>WHAT IS IT GOOD FOR</srai></template>
+        </category>
+        
+        <category>
+            <pattern>* USE OF IT ^</pattern>
+            <template><srai>WHAT IS IT GOOD FOR</srai></template>
+        </category>
+        
+        <category>
+            <pattern>* IT NEEDED ^</pattern>
+            <template><srai>WHAT IS IT GOOD FOR</srai></template>
+        </category>
+        
+        <category>
+            <pattern>* IT OPTIONAL ^</pattern>
+            <template>The registration of courses is optional. However, it is highly recommended for courses with limited capacity.</template>
+        </category>
+
+        <category>
+            <pattern>* IT REQUIRED ^</pattern>
+            <template><srai>IS IT OPTIONAL</srai></template>
+        </category>
+
+        <category>
+            <pattern>* IT COMPULSORY</pattern>
+            <template><srai>IS IT OPTIONAL</srai></template>
+        </category>
+        
+        <category>
+        <pattern>^ WHEN ^ IT ^</pattern>
+        <template>
+            Courses are registered during the period "Registration for courses". This period can be found in the schedule. 
+            Please, mind that in the first semesters, your Registration period begins a few days later than specified in schedule because of the <set name="topic">registration waves</set>.
+            <button>
+                <text>Click here to show schedule</text>
+                <url>https://is.muni.cz/auth/predmety/obdobi</url>
+            </button>
+        </template>
+        </category>
+	</topic>
+	
+	<category>
+	    <pattern>^ WHAT ARE REGISTRATION WAVES ^</pattern>
+	    <template>
+	        <think><set name="topic">registration waves</set></think>
+	        <srai>WHAT ARE THEY</srai>
+	    </template>
+    </category>
+	
+	<topic name="registration waves">
+	    <category>
+            <pattern>^ WHAT ARE THEY ^</pattern>
+            <template>In order to favor those students who are approaching the end of their studies and have a lesser (perhaps the last) opportunity to enroll for the course, there is a system of registration waves: The longer you study and the more credits you have earned, the sooner you are registered.</template>
+        </category>
+
+        <category>
+            <pattern>^ WHAT IS IT ^</pattern>
+            <template>WHAT ARE THEY</template>
+        </category>
+        
 	</topic>
 </aiml>

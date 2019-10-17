@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <category>
+        <pattern>^ SUBJECT ^</pattern>
+        <template><srai><star/> COURSE <star index="2"/></srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ CANCEL ^ COURSE ^</pattern>
+        <template>Courses can be canceled without any penalty during the first 14 days of the semester.</template>
+    </category>
+
+</aiml>
