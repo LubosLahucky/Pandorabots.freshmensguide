@@ -92,9 +92,9 @@
     </category>
     
     <category>
-        <pattern>WHAT CAN YOU DO</pattern>
+        <pattern>WHAT CAN YOU DO ^</pattern>
         <template>
-            I can help freshmen with:
+            I can help freshmen with questions about:
             <break/>
             <srai>ENUMERATE TOPICS</srai>
         </template>
@@ -148,12 +148,12 @@
     </category>
 
     <category>
-        <pattern>^ ALL YOU KNOW</pattern>
+        <pattern>^ YOU KNOW</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
 
     <category>
-        <pattern>^ ALL YOU CAN DO</pattern>
+        <pattern>^ YOU CAN DO</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
 </aiml>

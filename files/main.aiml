@@ -60,10 +60,7 @@
     
     <category>
         <pattern>^ ARE YOU HERE ^</pattern>
-        <template>
-            Yes, I'm here.
-            <split/>
-            <srai>POLL</srai></template>
+        <template><srai>ARE YOU THERE</srai></template>
     </category>
 
     <category>
