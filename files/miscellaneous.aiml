@@ -11,4 +11,27 @@
         <template>Courses can be canceled without any penalty during the first 14 days of the semester.</template>
     </category>
 
+    <category>
+        <pattern>* DIFFERENCE * SEMINARS * LECTURES ^</pattern>
+        <template>
+            <srai>WHAT ARE LECTURES</srai>
+            <break/>
+            <srai>WHAT ARE SEMINARS</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* DIFFERENCE * LECTURES * SEMINARS ^</pattern>
+        <template><srai>WHAT IS THE DIFFERENCE BETWEEN SEMINARS AND LECTURES</srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ WHAT ARE ^ LECTURES ^</pattern>
+        <template>The lecture is a form of teaching in which the teacher teaches students the theory.</template>
+    </category>
+    
+    <category>
+        <pattern>^ WHAT ARE ^ SEMINARS</pattern>
+        <template>Seminars serve to increase student engagement and practice.</template>
+    </category>
 </aiml>

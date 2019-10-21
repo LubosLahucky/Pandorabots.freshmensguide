@@ -30,6 +30,13 @@
     </category>
 
     <category>
+        <pattern># TELL ME ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>_ ASK ^ ABOUT *</pattern>
         <template>
             <srai>HELP ME WITH <star index="3"/></srai>
@@ -101,31 +108,54 @@
     </category>
     
     <category>
+        <pattern>I DO NOT NEED YOUR HELP</pattern>
+        <template>Why did you write me then? Come back when you have some questions.</template>
+    </category>
+    
+    <category>
         <that>^ DO YOU NEED MY HELP</that>
-        <pattern>YES ^</pattern>
+        <pattern># YES ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <that>^ HOW CAN I HELP YOU</that>
+        <pattern>_ CAN NOT ^</pattern>
+        <template><srai>I DO NOT NEED YOUR HELP</srai></template>
+    </category>
+
+    <category>
+        <that>^ DO YOU NEED MY HELP</that>
+        <pattern># NO ^</pattern>
+        <template><srai>I DO NOT NEED YOUR HELP</srai></template>
+    </category>
+    
+    <category>
+        <that>^ WOULD YOU LIKE TO ASK ME SOMETHING</that>
+        <pattern># YES ^</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
 
     <category>
         <that>^ WOULD YOU LIKE TO ASK ME SOMETHING</that>
-        <pattern>YES ^</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
+        <pattern># NO ^</pattern>
+        <template><srai>I DO NOT NEED YOUR HELP</srai></template>
     </category>
-
+    
     <category>
         <that>^ DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
-        <pattern>YES ^</pattern>
+        <pattern># YES ^</pattern>
         <template><srai>I HAVE A QUESTION</srai></template>
     </category>
 
     <category>
         <that>^ DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
-        <pattern>NO ^</pattern>
+        <pattern># NO ^</pattern>
         <template>
-            I can tell you what it is then.
+            I will tell you something about it then.
             <delay>1</delay>
             <split/>
-            <srai>WHAT IS IT</srai>
+            <srai>TELL ME SOMETHING ABOUT IT</srai>
             <delay>1</delay>
             <split/>
             Feel free to ask more questions about it.

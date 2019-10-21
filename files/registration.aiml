@@ -44,6 +44,11 @@
     </category>
     
 	<topic name="registration">
+	   <category>
+            <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+            <template><srai>WHAT IS IT</srai></template>
+        </category>
+        
 	    <category>
 	        <pattern>^ WHAT IS IT ^</pattern>
 	        <template>By registering a course, you express your interest in this course. <srai>WHAT IS IT GOOD FOR</srai></template>

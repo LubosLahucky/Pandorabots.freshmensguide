@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
     <category>
-        <pattern>^ ARE EXAMS ^</pattern>
+        <pattern>^ ARE ^ EXAMS ^</pattern>
         <template>
             <think><set name="topic">exams</set></think>
             <srai><star/> ARE THEY <star index="2"/></srai>
@@ -33,18 +33,28 @@
     </category>
     
 	<topic name="exams">
-	    <category>
-	        <pattern>^ WHAT ^ IS IT ^</pattern>
-	        <template><srai>WHAT ARE THEY</srai></template>
+	   <category>
+            <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+            <template><srai>WHAT IS IT</srai></template>
         </category>
         
         <category>
+            <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
+            <template><srai>SOMETHING ABOUT IT</srai></template>
+        </category>
+
+	    <category>
+	        <pattern>^ WHAT ^ IS IT ^</pattern>
+            <template>
+                Some courses are finished by an exam at the end of semester. 
+                <break/>
+                Generally, your performance on the exam influences your final grade more than your work during the semester.
+            </template>
+	    </category>
+        
+        <category>
 	        <pattern>^ WHAT ^ ARE THEY ^</pattern>
-	        <template>
-	            Some courses are finished by an exam at the end of semester. 
-	            <break/>
-	            Generally, your performance on the exam influences your final grade more than your work during the semester.
-	        </template>
+            <template><srai>WHAT IS IT</srai></template>
 	    </category>
 	    
         <category>
@@ -61,6 +71,16 @@
         <category>
             <pattern>^ CHEATING ^</pattern>
             <template>Cheating during exams is STRICTLY forbidden. You may have serious trouble when you get caught.</template>
+        </category>
+        
+        <category>
+            <pattern>* THEY ^ WRITTEN ^</pattern>
+            <template><srai>HOW DO THEY LOOK</srai></template>
+        </category>
+        
+        <category>
+            <pattern>* THEY ORAL ^</pattern>
+            <template><srai>HOW DO THEY LOOK</srai></template>
         </category>
 	</topic>
 </aiml>

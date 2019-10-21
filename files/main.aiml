@@ -86,4 +86,20 @@
 	        <srai><star/> <star index="2"/></srai>
         </template>
     </category>
+    
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>My name is <bot name="name"/>.</template>
+    </category>
+    
+    <category>
+        <pattern>^ WHAT ^ IS ^ TOPIC ^</pattern>
+        <template>We are now talking about <get name="topic"/>.</template>
+    </category>
+    
+    <category>
+        <pattern>^ WHAT ^ ARE * TALKING ABOUT ^</pattern>
+        <template><srai>WHAT IS THE TOPIC</srai></template>
+    </category>
+
 </aiml>

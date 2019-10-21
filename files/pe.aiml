@@ -44,7 +44,7 @@
     
 	<topic name="pe">
 	    <category>
-	        <pattern>^ SOMETHING ABOUT IT ^</pattern>
+	        <pattern>^ SOMETHING ^ ABOUT IT ^</pattern>
 	        <template><srai>ARE THERE ANY PE COURSES</srai> <srai>HOW MANY CREDITS DO I NEED FOR PE</srai></template>
         </category>
 	    

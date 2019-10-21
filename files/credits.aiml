@@ -34,18 +34,28 @@
     
 	<topic name="credits">
 	    <category>
-	        <pattern>^ WHAT ^ IS IT ^</pattern>
-	        <template><srai>WHAT ARE THEY</srai></template>
+	        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+	        <template><srai>WHAT IS IT</srai></template>
         </category>
-
+	    
 	    <category>
-	        <pattern>^ WHAT ^ ARE THEY ^</pattern>
+	        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
+	        <template><srai>TELL ME SOMETHING ABOUT IT</srai></template>
+        </category>
+	    
+	    <category>
+	        <pattern>^ WHAT ^ IS IT ^</pattern>
 	        <template>
-                <srai>HOW DO I EARN THEM</srai>
+	            <srai>HOW DO I EARN THEM</srai>
                 <delay>1</delay>
                 <split/>
                 <srai>HOW MANY OF THEM DO I NEED</srai>
 	        </template>
+        </category>
+
+	    <category>
+	        <pattern>^ WHAT ^ ARE THEY ^</pattern>
+	        <template><srai>WHAT IS IT</srai></template>
         </category>
 
 	    <category>
