@@ -107,7 +107,7 @@
 
         <category>
             <pattern>* OF THEM * HAVE TO GET _ PE ^</pattern>
-            <template>You need to earn 2 credits for PE courses during your bachelor's degree.</template>
+            <template><srai>HOW MANY OF THEM DO I NEED FOR PE</srai></template>
         </category>
 
         <category>
@@ -118,6 +118,11 @@
         <category>
             <pattern>* MAXIMUM * OF THEM ^</pattern>
             <template>There is a limit of 60 credits per semester. However, this is far above the recommended number of credits per semester.</template>
+        </category>
+    
+        <category>
+            <pattern>* LIMIT * OF THEM ^</pattern>
+            <template><srai>WHAT IS THE MAXIMUM OF THEM</srai></template>
         </category>
     
         <category>
@@ -147,7 +152,7 @@
         <category>
             <pattern>* THEM * YOU RECOMMEND ^</pattern>
             <template>
-                I personally recommend enrolling courses worth 35 credits, so that you can enroll fewer courses in your last semester.
+                <srai>HOW MANY OF THEM ARE RECOMMENDED</srai>
             </template>
         </category>
         

@@ -37,6 +37,13 @@
     </category>
 
     <category>
+        <pattern>I WANT TO KNOW ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>_ ASK ^ ABOUT *</pattern>
         <template>
             <srai>HELP ME WITH <star index="3"/></srai>
@@ -44,13 +51,18 @@
     </category>
 
     <category>
+        <pattern>_ ASK YOU SOMETHING</pattern>
+        <template><srai>I HAVE A QUESTION</srai></template>
+    </category>
+
+    <category>
         <pattern>* ASK ^ QUESTION ^</pattern>
-        <template>Sure, feel free to ask me.</template>
+        <template><srai>I HAVE A QUESTION</srai></template>
     </category>
     
     <category>
         <pattern>* HAVE ^ QUESTION ^</pattern>
-        <template>Feel free to ask me then.</template>
+        <template>Feel free to ask me.</template>
     </category>
 
     <category>
@@ -61,6 +73,13 @@
     <category>
         <pattern># HELP ME WITH SOMETHING ^</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern><set>topics</set></pattern>
+        <template>
+            <srai>HELP ME WITH <star/></srai>
+        </template>
     </category>
 
     <category>
@@ -168,6 +187,11 @@
     </category>
 
     <category>
+        <pattern>$WHAT * HELP ^ WITH ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
         <pattern>WHAT * ASK YOU</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
@@ -178,7 +202,7 @@
     </category>
 
     <category>
-        <pattern>^ YOU KNOW</pattern>
+        <pattern>* YOU KNOW</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
 

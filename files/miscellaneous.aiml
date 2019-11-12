@@ -27,11 +27,21 @@
     
     <category>
         <pattern>^ WHAT ARE ^ LECTURES ^</pattern>
-        <template>The lecture is a form of teaching in which the teacher teaches students the theory.</template>
+        <template>The lecture is a form of teaching in which the teacher teaches students the theory. <srai>ARE LECTURES COMPULSORY</srai></template>
     </category>
     
     <category>
-        <pattern>^ WHAT ARE ^ SEMINARS</pattern>
-        <template>Seminars serve to increase student engagement and practice.</template>
+        <pattern>^ WHAT ARE ^ SEMINARS ^</pattern>
+        <template>Seminars serve to increase practical skills. <srai>ARE SEMINARS COMPULSORY</srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ ARE ^ SEMINARS COMPULSORY ^</pattern>
+        <template>Generally, they are compulsory.</template>
+    </category>
+    
+    <category>
+        <pattern>^ ARE ^ LECTURES COMPULSORY ^</pattern>
+        <template>Generally, they are not compulsory.</template>
     </category>
 </aiml>

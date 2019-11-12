@@ -9,7 +9,7 @@
 	            <li>Hello</li>
 	        </random>!
 	        <break/>
-	        My name is <bot name="name"/> and my task is to help freshmen with understanding credits, enrollment of the courses, etc.
+	        <srai>TELL ME ABOUT YOU</srai>
 	        <split/>
             <srai>POLL</srai>
         </template>
@@ -23,7 +23,7 @@
     </category>
     
 	<category>
-	    <pattern><set>greetings</set> ^</pattern>
+	    <pattern>^ <set>greetings</set> ^</pattern>
 	    <template>
 	        <srai>HI</srai>
 	    </template>
@@ -73,7 +73,7 @@
     </category>
     
     <category>
-        <pattern>_ PLEASE ^</pattern>
+        <pattern># PLEASE ^</pattern>
         <template>
             <random>
                 <li>Thank you for your politeness.</li>
@@ -95,6 +95,11 @@
     <category>
         <pattern>^ WHAT ^ IS ^ TOPIC ^</pattern>
         <template>We are now talking about <get name="topic"/>.</template>
+    </category>
+    
+    <category>
+        <pattern># TELL ME ABOUT YOU ^</pattern>
+        <template>My name is <bot name="name"/> and my task is to help freshmen with understanding credits, enrollment of the courses, etc.</template>
     </category>
     
     <category>
