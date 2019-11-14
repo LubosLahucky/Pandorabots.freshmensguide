@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+	    <pattern>^ REGISTRATION WAVES ^</pattern>
+	    <template>
+	        <think><set name="topic">registration waves</set></think>
+	        <srai><star/> THEY <star index="2"/></srai>
+	    </template>
+    </category>
+    
+	<topic name="registration waves">
+	    <category>
+	        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+	        <template><srai>WHAT IS IT</srai></template>
+        </category>
+	    
+	    <category>
+	        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
+	        <template><srai>TELL ME SOMETHING ABOUT IT</srai></template>
+        </category>
+        
+	    <category>
+            <pattern>^ WHAT ARE THEY ^</pattern>
+            <template>In order to favor those students who are approaching the end of their studies and have a lesser (perhaps the last) opportunity to enroll the course, there is a system of registration waves: The longer you study and the more credits you have earned, the sooner you are registered.</template>
+        </category>
+
+        <category>
+            <pattern>^ WHAT IS IT ^</pattern>
+            <template>WHAT ARE THEY</template>
+        </category>
+        
+        <category>
+    	    <pattern>*</pattern>
+    	    <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here:
+    	        <link>
+    	            <text>HELP - Registration Waves</text>
+    	            <url>https://is.muni.cz/auth/help/student/registrace?lang=en#s_reg_vlny</url>
+                </link>
+    	    </template>
+        </category>
+	</topic>
+</aiml>

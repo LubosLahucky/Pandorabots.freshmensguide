@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-    
     <category>
         <pattern>^ WHEN ^ REGISTER ^</pattern>
         <template>
@@ -90,7 +89,12 @@
         </category>
 
         <category>
-            <pattern>* IT COMPULSORY</pattern>
+            <pattern>* IT COMPULSORY ^</pattern>
+            <template><srai>IS IT OPTIONAL</srai></template>
+        </category>
+        
+        <category>
+            <pattern>* IT VOLUNTARY ^</pattern>
             <template><srai>IS IT OPTIONAL</srai></template>
         </category>
         
@@ -105,26 +109,16 @@
             </button>
         </template>
         </category>
-	</topic>
-	
-	<category>
-	    <pattern>^ WHAT ARE REGISTRATION WAVES ^</pattern>
-	    <template>
-	        <think><set name="topic">registration waves</set></think>
-	        <srai>WHAT ARE THEY</srai>
-	    </template>
-    </category>
-	
-	<topic name="registration waves">
-	    <category>
-            <pattern>^ WHAT ARE THEY ^</pattern>
-            <template>In order to favor those students who are approaching the end of their studies and have a lesser (perhaps the last) opportunity to enroll for the course, there is a system of registration waves: The longer you study and the more credits you have earned, the sooner you are registered.</template>
-        </category>
 
-        <category>
-            <pattern>^ WHAT IS IT ^</pattern>
-            <template>WHAT ARE THEY</template>
+    	<category>
+    	    <pattern>*</pattern>
+    	    <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here: 
+    	        <link>
+    	            <text>HELP - Registration and Enrollment</text> 
+    	            <url>https://is.muni.cz/auth/help/student/registrace?lang=en</url>
+                </link>
+    	    </template>
         </category>
-        
 	</topic>
+	
 </aiml>

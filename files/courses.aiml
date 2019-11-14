@@ -1,11 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+    <category>
+        <pattern>* COURSE ^</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai><star/> THEM <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* COURSES ^</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai><star/> THEM <star index="2"/></srai>
+        </template>
+    </category>
+    
 	<topic name="courses">
 	    <category>
-	        <pattern>WHAT IS IT</pattern>
-	        <template>
-	            <!-- TODO -->
-	        </template>
+	        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+	        <template><srai>WHAT IS IT</srai></template>
+        </category>
+	    
+	    <category>
+	        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
+	        <template><srai>TELL ME SOMETHING ABOUT IT</srai></template>
+        </category>
+        
+	    <category>
+	        <pattern>^ WHAT ^ IS IT ^</pattern>
+	        <template><srai>WHAT ARE THEY</srai></template>
+        </category>
+        
+        <category>
+            <pattern>^ WHAT ^ ARE THEY ^</pattern>
+            <template><!--TODO--></template>
+        </category>
+        
+        <category>
+            <pattern>^ WHERE * REGISTER ^ THEM ^</pattern>
+            <template>
+                You can register / enroll courses using this application: 
+                <link>
+                    <text>Registration and Enrollment</text>
+                    <url>https://is.muni.cz/auth/student/zapis?lang=en</url>
+                </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>^ HOW * REGISTER ^ THEM ^</pattern>
+            <template><srai>WHERE CAN I REGISTER THEM</srai></template>
         </category>
 	</topic>
 </aiml>

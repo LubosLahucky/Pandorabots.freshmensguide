@@ -18,9 +18,19 @@
     
 	<topic name="prerequisites">
 	    <category>
+	        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+	        <template><srai>WHAT IS IT</srai></template>
+        </category>
+	    
+	    <category>
+	        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
+	        <template><srai>TELL ME SOMETHING ABOUT IT</srai></template>
+        </category>
+        
+	    <category>
 	        <pattern>WHAT ARE THEY</pattern>
 	        <template>
-	            The prerequisite of the subject is a condition that must be met in order to enroll the subject.
+	            The prerequisites of a subject are a set of conditions that must be met in order to enroll the subject.
 	        </template>
         </category>
 	    

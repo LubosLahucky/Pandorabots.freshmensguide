@@ -111,7 +111,7 @@
                 </map>
             </set>
             <condition name="currenttopic">
-                <li value="english"> and that's all!</li>
+                <li value="PE"> and that's all!</li>
                 <li>, <set name="currenttopic"><map name="topicenumerator"><get name="currenttopic"/></map></set><loop/></li>
             </condition>
         </template>
