@@ -15,6 +15,22 @@
             <srai><star/> THEY <star index="2"/></srai>
         </template>
     </category>
+
+    <category>
+        <pattern>* ENOUGH CREDITS ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/>ENOUGH OF THEM <star index="2"/></srai>            
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* CREDITS ENOUGH ^</pattern>
+        <template>
+            <think><set name="topic">credits</set></think>
+            <srai><star/>OF THEM ENOUGH <star index="2"/></srai>            
+        </template>
+    </category>
     
     <category>
         <pattern>* CREDITS ^</pattern>
@@ -46,10 +62,7 @@
 	    <category>
 	        <pattern>^ WHAT ^ IS IT ^</pattern>
 	        <template>
-	            <srai>HOW DO I EARN THEM</srai>
-                <delay>1</delay>
-                <split/>
-                <srai>HOW MANY OF THEM DO I NEED</srai>
+	            <srai>HOW DO I EARN THEM</srai> You need to earn some amount of them per semester in order to continue studying.
 	        </template>
         </category>
 
@@ -61,8 +74,13 @@
 	    <category>
 	        <pattern>* THEY ^ IMPORTANT ^</pattern>
 	        <template>
-                They are important because if you don't earn enough of them, you may not be allowed to continue studying.
+                <srai>WHY DO I NEED THEM</srai>
 	        </template>
+        </category>
+
+        <category>
+            <pattern>^ WHY * NEED ^ THEM ^</pattern>
+            <template>If you do not earn enough of them, you may not be allowed to continue studying.</template>
         </category>
 
         <category>
@@ -99,7 +117,7 @@
                 For admission to the Final State Exam, you need to earn at least 180 credits (in bachelor's degree).
             </template>
         </category>
-    
+
         <category>
             <pattern>* OF THEM * NEED _ PE ^</pattern>
             <template>You need to earn 2 credits for PE courses during your bachelor's degree.</template>
@@ -116,22 +134,9 @@
         </category>
 
         <category>
-            <pattern>* MAXIMUM * OF THEM ^</pattern>
-            <template>There is a limit of 60 credits per semester. However, this is far above the recommended number of credits per semester.</template>
-        </category>
-    
-        <category>
-            <pattern>* LIMIT * OF THEM ^</pattern>
-            <template><srai>WHAT IS THE MAXIMUM OF THEM</srai></template>
-        </category>
-    
-        <category>
             <pattern>* OF THEM * NEED ^</pattern>
             <template>
-                <srai><star/> OF THEM <star index="2"/> NEED PER SEMESTER</srai>
-                <delay>1</delay>
-                <split/>
-                <srai><star/> OF THEM <star index="2"/> NEED PER STUDY</srai>
+                <srai><star/> OF THEM <star index="2"/> NEED PER SEMESTER</srai> <srai><star/> OF THEM <star index="2"/> NEED PER STUDY</srai>
             </template>
         </category>
         
@@ -143,23 +148,35 @@
         <category>
             <pattern>* EARN THEM ^</pattern>
             <template>
-                Each course in the whole MU has a certain number of credits, which you get for passing it.
-                <break/>
+                Each course in the whole Masaryk University is assigned a certain amount of credits, which you get for passing it.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* THEM * COURSE ^</pattern>
+            <template>
+                The amount of credits you earn for passing the course depends on its difficulty. 
                 If the course is worth 5 credits, it means that a student is expected to spend 5 hours per week on the course.
             </template>
         </category>
         
         <category>
-            <pattern>* THEM * YOU RECOMMEND ^</pattern>
-            <template>
-                <srai>HOW MANY OF THEM ARE RECOMMENDED</srai>
-            </template>
+            <pattern>* THEM * COURSES ^</pattern>
+            <template><srai>HOW MANY OF THEM DO I GET FOR A COURSE</srai></template>
         </category>
         
         <category>
             <pattern>* THEM * RECOMMENDED ^</pattern>
             <template>
                 The recommended number of credits per semester is 30.
+                It is not recommended to have less than that, especially in the first semester.
+            </template>
+        </category>
+        
+        <category>
+            <pattern>* THEM * RECOMMEND ^</pattern>
+            <template>
+                <srai>HOW MANY OF THEM ARE RECOMMENDED</srai>
             </template>
         </category>
         
@@ -168,6 +185,43 @@
             <template>
                 <srai>HOW MANY OF THEM IS RECOMMENDED</srai>
             </template>
+        </category>
+        
+        <category>
+            <pattern>* RECOMMEND * THEM ^</pattern>
+            <template>
+                <srai>HOW MANY OF THEM IS RECOMMENDED</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>^ IS * THEM ^ ENOUGH ^</pattern>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF CREDITS</srai></template>
+        </category>
+        
+        <category>
+            <pattern>^ IS * THEM ^ OK ^</pattern>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF CREDITS</srai></template>
+        </category>
+
+        <category>
+            <pattern>^ IS * THEM ^ FINE ^</pattern>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF CREDITS</srai></template>
+        </category>
+
+        <category>
+            <pattern>^ IS * THEM ^ GOOD ^</pattern>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF CREDITS</srai></template>
+        </category>
+        
+        <category>
+            <pattern>* MAXIMUM ^ OF THEM ^</pattern>
+            <template>There is a limit of 60 credits per semester. However, this amount is far above the recommended amount of credits per semester.</template>
+        </category>
+    
+        <category>
+            <pattern>* LIMIT ^ OF THEM ^</pattern>
+            <template><srai>WHAT IS THE MAXIMUM OF CREDITS</srai></template>
         </category>
 	</topic>
 
