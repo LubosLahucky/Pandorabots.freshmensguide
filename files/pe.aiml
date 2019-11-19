@@ -45,7 +45,7 @@
 	<topic name="pe">
 	    <category>
 	        <pattern>^ SOMETHING ^ ABOUT IT ^</pattern>
-	        <template><srai>ARE THERE ANY PE COURSES</srai> <srai>HOW MANY CREDITS DO I NEED FOR PE</srai></template>
+	        <template><srai>HOW DOES IT WORK</srai></template>
         </category>
 	    
 	    <category>
@@ -58,6 +58,11 @@
             <template>PE is paid only if you already earned 2 credits for PE courses.</template>
         </category>
         
+        <category>
+            <pattern>^ FREE ^</pattern>
+            <template><srai>IS IT PAID</srai></template>
+        </category>
+
         <category>
             <pattern>* PAY ^</pattern>
             <template><srai>IS IT PAID</srai></template>
@@ -78,5 +83,11 @@
             <template>There is a huge variety of PE courses on the Faculty of Sports Studies. They all start with prefix "p9".</template>
         </category>
         
+        <category>
+            <pattern>^ HOW ^ IT ^ WORK ^</pattern>
+            <template>
+                <srai>LIST OF COURSES</srai> <srai>IS IT PAID</srai> <srai>IS IT COMPULSORY</srai>
+            </template>
+        </category>
 	</topic>
 </aiml>

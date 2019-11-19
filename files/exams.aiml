@@ -32,8 +32,34 @@
         </template>
     </category>
     
+    <category>
+        <pattern>* WRITTEN EXAMS ^</pattern>
+        <template>
+            <think><set name="topic">exams</set></think>
+            During the written exams, you fill your responses in the answer sheets. The answer sheets are evaluated by the teacher, scanned and then processed by the computer. 
+            <srai>WHERE CAN I FIND MY SCANNED ANSWER SHEETS</srai> <srai>WHAT IF I DO NOT FILL IN MY PERSONAL ID</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* FIND ^ SHEETS ^</pattern>
+        <template>You can find your answer sheets here: https://is.muni.cz/auth/re/&lt;your personal identification number&gt;/ol</template>
+    </category>
+    
+    <category>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT WRITTEN EXAMS</that>
+        <pattern>YES ^</pattern>
+        <template><srai>HOW DO WRITTEN EXAMS WORK</srai></template>
+    </category>
+
+    <category>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT WRITTEN EXAMS</that>
+        <pattern>NO ^</pattern>
+        <template>Feel free to ask me something different then.</template>
+    </category>
+    
 	<topic name="exams">
-	   <category>
+	    <category>
             <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
             <template><srai>WHAT IS IT</srai></template>
         </category>
@@ -48,7 +74,7 @@
             <template>
                 Some courses are finished by an exam at the end of semester. 
                 <break/>
-                Generally, your performance on the exam influences your final grade more than your work during the semester.
+                Your performance on the exam influences your final grade.
             </template>
 	    </category>
         
@@ -60,11 +86,8 @@
         <category>
             <pattern>^ THEY LOOK ^</pattern>
             <template>
-                Generally, the exams in The Faculty of Informatics are written.
-                <button>
-                    <text>Here is an example of the written exam.</text>
-                    <url>https://is.muni.cz/auth/el/fi/podzim2017/IB102/um/termin1_2011.pdf</url>
-                </button>
+                The exams can be both oral and written - it depends on the course. 
+                Would you like to know more about written exams?
             </template>
         </category>
         
@@ -81,6 +104,16 @@
         <category>
             <pattern>* THEY ORAL ^</pattern>
             <template><srai>HOW DO THEY LOOK</srai></template>
+        </category>
+        
+        <category>
+            <pattern>^ CAN I USE * THEM ^</pattern>
+            <template></template>
+        </category>
+        
+        <category>
+            <pattern>* DO NOT FILL ^ ID ^</pattern>
+            <template>Do NOT forget to fill in your personal identification number or there could be problems with identification of your answer sheet.</template>
         </category>
 	</topic>
 </aiml>
