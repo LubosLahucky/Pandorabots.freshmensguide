@@ -4,6 +4,12 @@ This bot is being developed as a part of my bachelor's thesis.
 His task is to help the students of Masaryk University with their basic questions.
 The bot is currently using AIML version 2.1 and will be rewritten into version 1.0 (for compatibility reasons) when it is finished.
 
+Chatting with the bot is possible on one of the following links:
+* [BotLibre](https://botlibre.com/browse?id=29250471)
+* [Pandorabots](https://home.pandorabots.com/dash/bot-directory) - The bot can be found in DIRECTORY under the name "Freshmen's Guide"
+* [Telegram](https://t.me/FreshmensGuideBot) - Please mind the limit of 500 messages per day
+For the best experience, I recommend chatting on Pandorabots, as the testing was done there.
+
 ### List of finished and tested questions:
 
 #### [ Questions about bot ]
