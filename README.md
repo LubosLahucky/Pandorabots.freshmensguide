@@ -8,6 +8,7 @@ Chatting with the bot is possible on one of the following links:
 * [BotLibre](https://botlibre.com/browse?id=29250471)
 * [Pandorabots](https://home.pandorabots.com/dash/bot-directory) - The bot can be found in DIRECTORY under the name "Freshmen's Guide"
 * [Telegram](https://t.me/FreshmensGuideBot) - Please mind the limit of 500 messages per day
+
 For the best experience, I recommend chatting on Pandorabots, as the testing was done there.
 
 ### List of finished and tested questions:
