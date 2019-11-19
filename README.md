@@ -11,6 +11,15 @@ Chatting with the bot is possible on one of the following links:
 
 For the best experience, I recommend chatting on Pandorabots, as the testing was done there.
 
+### List of topics:
+- **Credits**
+- **Courses**
+- **Registration**
+- **Enrollment**
+- **Seminar groups**
+- **Exams**
+- **PE**
+
 ### List of finished and tested questions:
 
 #### [ Questions about bot ]
