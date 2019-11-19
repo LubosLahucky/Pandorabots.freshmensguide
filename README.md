@@ -24,16 +24,16 @@ For the best experience, I recommend chatting on Pandorabots, as the testing was
 
 
 #### [ Set topic ]
-* Can you help me with <topic>
-    * Wouldn't you mind helping me with <topic>
-    * Let's talk about <topic>
-    * Can you help me with <topic>
-    * I have a question about <topic>
-    * I want to know about <topic>
-    * I would like to know something about <topic>
+* Can you help me with \<topic\>
+    * Wouldn't you mind helping me with \<topic\>
+    * Let's talk about \<topic\>
+    * Can you help me with \<topic\>
+    * I have a question about \<topic\>
+    * I want to know about \<topic\>
+    * I would like to know something about \<topic\>
 * What is/are <topic>    
-* Can you tell me something about <topic>
-    * What do you know about <topic>
+* Can you tell me something about \<topic\>
+    * What do you know about \<topic\>
 * Can I ask you something
     * I have a question
     * Can you help me
@@ -92,7 +92,7 @@ For the best experience, I recommend chatting on Pandorabots, as the testing was
     * Are exams only written
     * Are exams only oral
 * How do written exams work
-* Can I use <calculator, ruler, ...> during exams
+* Can I use \<calculator, ruler, ...\> during exams
 * Can I use cheat sheet during exams
     * Can I cheat during exams
     * What if I cheat during exams
