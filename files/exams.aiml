@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
     <category>
+        <pattern>^ EXAMS ^</pattern>
+        <template>
+            <think><set name="topic">exams</set></think>
+            <srai><star/> THEM <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <category>
         <pattern>^ ARE ^ EXAMS ^</pattern>
         <template>
             <think><set name="topic">exams</set></think>
-            <srai><star/> ARE THEY <star index="2"/></srai>
+            <srai><star/> ARE <star index="2"/> THEY <star index="3"/></srai>
         </template>
     </category>
 
@@ -33,11 +41,10 @@
     </category>
     
     <category>
-        <pattern>* WRITTEN EXAMS ^</pattern>
+        <pattern>_ WRITTEN EXAMS ^</pattern>
         <template>
             <think><set name="topic">exams</set></think>
-            During the written exams, you fill your responses in the answer sheets. The answer sheets are evaluated by the teacher, scanned and then processed by the computer. 
-            <srai>WHERE CAN I FIND MY SCANNED ANSWER SHEETS</srai> <srai>WHAT IF I DO NOT FILL IN MY PERSONAL ID</srai>
+            During the written exams, you fill your responses in the answer sheets. The answer sheets are evaluated by the teacher, scanned and then processed by the computer. <srai>WHERE CAN I FIND MY SCANNED ANSWER SHEETS</srai> <srai>WHAT IF I DO NOT FILL IN MY PERSONAL ID</srai>
         </template>
     </category>
     
@@ -102,13 +109,13 @@
         </category>
         
         <category>
-            <pattern>* THEY ORAL ^</pattern>
+            <pattern>* THEY ^ ORAL ^</pattern>
             <template><srai>HOW DO THEY LOOK</srai></template>
         </category>
         
         <category>
             <pattern>^ CAN I USE * THEM ^</pattern>
-            <template></template>
+            <template>It depends on the course.</template>
         </category>
         
         <category>

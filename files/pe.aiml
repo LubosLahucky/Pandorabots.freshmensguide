@@ -24,12 +24,23 @@
     
     <category>
         <pattern>* COMPULSORY PE ^</pattern>
-        <template></template>
+        <template>
+            <think><set name="topic">pe</set></think>
+            <srai>IS IT COMPULSORY</srai>
+        </template>
     </category>
     
     <category>
         <pattern>* PAID PE ^</pattern>
         <template><srai>IS PE PAID</srai></template>
+    </category>
+
+    <category>
+        <pattern>* FEE * PE ^</pattern>
+        <template>
+            <think><set name="topic">pe</set></think>
+            <srai>IS IT PAID</srai>
+        </template>
     </category>
 
     <category>

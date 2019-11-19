@@ -124,13 +124,18 @@
         </category>
 
         <category>
-            <pattern>* OF THEM * HAVE TO GET _ PE ^</pattern>
+            <pattern>* OF THEM * HAVE TO _ PE ^</pattern>
             <template><srai>HOW MANY OF THEM DO I NEED FOR PE</srai></template>
         </category>
 
         <category>
-            <pattern>* OF THEM * GET * PE ^</pattern>
+            <pattern>* OF THEM * PE COURSE ^</pattern>
             <template>Each PE course is worth 1 credit.</template>
+        </category>
+
+        <category>
+            <pattern>* OF THEM * PE COURSES ^</pattern>
+            <template><srai>HOW MANY OF THEM DO I GET FOR EACH PE COURSE</srai></template>
         </category>
 
         <category>
@@ -169,7 +174,7 @@
             <pattern>* THEM * RECOMMENDED ^</pattern>
             <template>
                 The recommended number of credits per semester is 30.
-                It is not recommended to have less than that, especially in the first semester.
+                It is not recommended to have fewer than that, especially in the first semester.
             </template>
         </category>
         

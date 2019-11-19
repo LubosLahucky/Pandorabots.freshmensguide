@@ -37,9 +37,16 @@
     </category>
 
     <category>
-        <pattern>I WANT TO KNOW ABOUT *</pattern>
+        <pattern>^ I WANT TO KNOW ^ ABOUT *</pattern>
         <template>
-            <srai>HELP ME WITH <star/></srai>
+            <srai>HELP ME WITH <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>^ I WOULD LIKE TO KNOW ^ ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>
         </template>
     </category>
 
@@ -67,12 +74,20 @@
 
     <category>
         <pattern>^ HELP ME ^</pattern>
-        <template>How could I help you?</template>
+        <template>How can I help you?</template>
     </category>
 
     <category>
         <pattern># HELP ME WITH SOMETHING ^</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>* YOU KNOW SOMETHING ABOUT ^ <set>topics</set> ^</pattern>
+        <template>
+            <think><set name="topic"><star index="3"/></set></think>
+            <srai>TELL ME SOMETHING ABOUT IT</srai>
+        </template>
     </category>
 
     <category>
@@ -95,9 +110,7 @@
 	    <template>
 	        <think><set name="topic"><srai>XARTICLE <star/></srai></set></think>
 	        Well, I can try to help you, but I do not think I will be very helpful in this area.
-	        I can only help you with:
-            <break/>
-            <srai>ENUMERATE TOPICS</srai>
+	        I can only help you with: <srai>ENUMERATE TOPICS</srai>
 	    </template>
     </category>
     
@@ -120,9 +133,7 @@
     <category>
         <pattern>WHAT CAN YOU DO ^</pattern>
         <template>
-            I can help freshmen with questions about:
-            <break/>
-            <srai>ENUMERATE TOPICS</srai>
+            I can help freshmen with questions about: <srai>ENUMERATE TOPICS</srai>
         </template>
     </category>
     
@@ -170,15 +181,7 @@
     <category>
         <that>^ DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
         <pattern># NO ^</pattern>
-        <template>
-            I will tell you something about it then.
-            <delay>1</delay>
-            <split/>
-            <srai>TELL ME SOMETHING ABOUT IT</srai>
-            <delay>1</delay>
-            <split/>
-            Feel free to ask more questions about it.
-        </template>
+        <template>I will tell you something about it then. <srai>TELL ME SOMETHING ABOUT IT</srai> Feel free to ask more questions about it.</template>
     </category>
     
     <category>
@@ -198,11 +201,6 @@
 
     <category>
         <pattern>WHAT * YOU KNOW</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
-
-    <category>
-        <pattern>* YOU KNOW</pattern>
         <template><srai>WHAT CAN YOU DO</srai></template>
     </category>
 

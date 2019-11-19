@@ -14,9 +14,7 @@
     <category>
         <pattern>* DIFFERENCE * SEMINARS * LECTURES ^</pattern>
         <template>
-            <srai>WHAT ARE LECTURES</srai>
-            <break/>
-            <srai>WHAT ARE SEMINARS</srai>
+            <srai>WHAT ARE LECTURES</srai> <srai>WHAT ARE SEMINARS</srai>
         </template>
     </category>
     

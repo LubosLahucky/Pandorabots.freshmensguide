@@ -55,7 +55,7 @@
         
         <category>
             <pattern>^ WHAT IS IT GOOD FOR ^</pattern>
-            <template>When the number of students who want to enroll a course with limited capacity exceeds its capacity, the students who registered the course first will be favored.</template>
+            <template>When the number of students who want to enroll a course with limited capacity exceeds its capacity, the students who registered the course first will be prioritized.</template>
         </category>
         
         <category>
@@ -74,15 +74,15 @@
         </category>
         
         <category>
-            <pattern>* IT NEEDED ^</pattern>
-            <template><srai>WHAT IS IT GOOD FOR</srai></template>
-        </category>
-        
-        <category>
             <pattern>* IT OPTIONAL ^</pattern>
             <template>The registration of courses is optional. However, it is highly recommended for courses with limited capacity.</template>
         </category>
 
+        <category>
+            <pattern>* IT NEEDED ^</pattern>
+            <template><srai>IS IT OPTIONAL</srai></template>
+        </category>
+    
         <category>
             <pattern>* IT REQUIRED ^</pattern>
             <template><srai>IS IT OPTIONAL</srai></template>

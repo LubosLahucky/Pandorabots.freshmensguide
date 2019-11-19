@@ -7,11 +7,7 @@
             <random>
 	            <li>Hi</li>
 	            <li>Hello</li>
-	        </random>!
-	        <break/>
-	        <srai>TELL ME ABOUT YOU</srai>
-	        <split/>
-            <srai>POLL</srai>
+	        </random>! <srai>TELL ME ABOUT YOU</srai> <srai>POLL</srai>
         </template>
     </category>
 
@@ -43,19 +39,13 @@
 
     <category>
         <pattern>PING</pattern>
-        <template>
-            Pong!
-            <split/>
-            <srai>POLL</srai>
-	    </template>
+        <template>Pong!</template>
     </category>
     
     <category>
         <pattern>^ ARE YOU THERE ^</pattern>
         <template>
-            Yes, I'm here.
-            <split/>
-            <srai>POLL</srai></template>
+            Yes, I'm here. <srai>POLL</srai></template>
     </category>
     
     <category>
@@ -66,14 +56,12 @@
     <category>
         <pattern>^ WAKE UP ^</pattern>
         <template>
-            I'm awake!
-            <split/>
-            <srai>POLL</srai>
+            I'm awake! <srai>POLL</srai>
         </template>
     </category>
     
     <category>
-        <pattern># PLEASE ^</pattern>
+        <pattern>XTHANKFORPOLITENESS</pattern>
         <template>
             <random>
                 <li>Thank you for your politeness.</li>
@@ -81,9 +69,20 @@
                 <li>If only more people were as polite as you are.</li>
                 <li>Many people forget about the word "please" when they ask for my help these days.</li>
             </random>
-	        <delay>1</delay>
-	        <split/>
-	        <srai><star/> <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern># PLEASE</pattern>
+        <template>
+	        <srai>XTHANKFORPOLITENESS</srai> <sr/>
+        </template>
+    </category>
+    
+    <category>
+        <pattern># PLEASE *</pattern>
+        <template>
+	        <srai>XTHANKFORPOLITENESS</srai> <srai><star/> <star index="2"/></srai>
         </template>
     </category>
     
@@ -99,11 +98,16 @@
     
     <category>
         <pattern># TELL ME ABOUT YOU ^</pattern>
-        <template>My name is <bot name="name"/> and my task is to help freshmen with understanding credits, enrollment of the courses, etc.</template>
+        <template>My name is <bot name="name"/> and my task is to help freshmen with their basic questions.</template>
     </category>
     
     <category>
-        <pattern>^ WHAT ^ ARE * TALKING ABOUT ^</pattern>
+        <pattern># TELL ME ABOUT YOURSELF ^</pattern>
+        <template><srai>TELL ME ABOUT YOU</srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ WHAT ^ ARE WE TALKING ABOUT ^</pattern>
         <template><srai>WHAT IS THE TOPIC</srai></template>
     </category>
 
