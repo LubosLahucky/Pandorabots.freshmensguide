@@ -6,7 +6,7 @@ The bot is currently using AIML version 2.1 and will be rewritten into version 1
 
 ### List of finished and tested questions:
 
-##### [ Questions about bot ]
+#### [ Questions about bot ]
 * Can you tell me about you/yourself
 * What is your name
 * What is the topic
@@ -16,7 +16,7 @@ The bot is currently using AIML version 2.1 and will be rewritten into version 1
     * What do you know
 
 
-##### [ Set topic ]
+#### [ Set topic ]
 * Can you help me with <topic>
     * Wouldn't you mind helping me with <topic>
     * Let's talk about <topic>
@@ -33,7 +33,7 @@ The bot is currently using AIML version 2.1 and will be rewritten into version 1
     * Can you help me with something
     
     
-##### [ Credits ]
+#### [ Credits ]
 * What are credits 
 * How to earn credits
 * How many credits do I need
@@ -52,7 +52,7 @@ The bot is currently using AIML version 2.1 and will be rewritten into version 1
     * Why do I need credits
 
     
-##### [ Registration ]
+#### [ Registration ]
 * What is registration
 * What is registration good for
     * What is the use of registration
@@ -67,7 +67,7 @@ The bot is currently using AIML version 2.1 and will be rewritten into version 1
 * What are registration waves
 
 
-##### [ PE ]
+#### [ PE ]
 * How many credits do I need for PE
 * How many credits do I get for each PE course
 * Is PE paid
@@ -80,7 +80,7 @@ The bot is currently using AIML version 2.1 and will be rewritten into version 1
 * Are there any PE courses
 * How does PE work
 
-##### [ Exams ]
+#### [ Exams ]
 * How do exams look like
     * Are exams only written
     * Are exams only oral
