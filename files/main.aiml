@@ -75,14 +75,14 @@
     <category>
         <pattern># PLEASE</pattern>
         <template>
-	        <srai>XTHANKFORPOLITENESS</srai> <sr/>
+	        <sr/> <srai>XTHANKFORPOLITENESS</srai>
         </template>
     </category>
     
     <category>
         <pattern># PLEASE *</pattern>
         <template>
-	        <srai>XTHANKFORPOLITENESS</srai> <srai><star/> <star index="2"/></srai>
+	        <srai><star/> <star index="2"/></srai> <srai>XTHANKFORPOLITENESS</srai>
         </template>
     </category>
     
@@ -93,7 +93,13 @@
     
     <category>
         <pattern>^ WHAT ^ IS ^ TOPIC ^</pattern>
-        <template>We are now talking about <get name="topic"/>.</template>
+        <template>
+            <set name="currenttopic">undefined</set>
+            <condition name="topic">
+                <li value="PE">We do not have any specific topic yet.</li>
+                <li>We are now talking about <get name="topic"/>.</li>
+            </condition>
+        </template>
     </category>
     
     <category>
@@ -109,6 +115,16 @@
     <category>
         <pattern>^ WHAT ^ ARE WE TALKING ABOUT ^</pattern>
         <template><srai>WHAT IS THE TOPIC</srai></template>
+    </category>
+    
+    <category>
+        <pattern>WHAT ^ INTERPRETER *</pattern>
+        <template>My current interpreter is: <program/>.</template>
+    </category>
+    
+    <category>
+        <pattern>HOW MANY CATEGORIES *</pattern>
+        <template>Currently there are <size/> categories.</template>
     </category>
 
 </aiml>

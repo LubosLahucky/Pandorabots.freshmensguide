@@ -7,7 +7,7 @@
             <srai><star/> ARE THEY <star index="2"/></srai>
         </template>
     </category>
-    
+
     <category>
         <pattern>* THE CREDITS ^</pattern>
         <template>
@@ -20,7 +20,7 @@
         <pattern>* ENOUGH CREDITS ^</pattern>
         <template>
             <think><set name="topic">credits</set></think>
-            <srai><star/>ENOUGH OF THEM <star index="2"/></srai>            
+            <srai><star/> ENOUGH OF THEM <star index="2"/></srai>            
         </template>
     </category>
     
@@ -28,7 +28,7 @@
         <pattern>* CREDITS ENOUGH ^</pattern>
         <template>
             <think><set name="topic">credits</set></think>
-            <srai><star/>OF THEM ENOUGH <star index="2"/></srai>            
+            <srai><star/> OF THEM ENOUGH <star index="2"/></srai>            
         </template>
     </category>
     
@@ -49,6 +49,7 @@
     </category>
     
 	<topic name="credits">
+	    <!-- BASIC TOPIC INFO -->
 	    <category>
 	        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
 	        <template><srai>WHAT IS IT</srai></template>
@@ -71,6 +72,15 @@
 	        <template><srai>WHAT IS IT</srai></template>
         </category>
 
+        <!-- REDUCTIONS -->
+        <category>
+            <pattern>^ HOW MANY *</pattern>
+            <template>
+                <srai><star/> WHAT NUMBER OF THEM <star index="2"/></srai>
+            </template>
+        </category>
+
+        <!-- IMPORTANCE OF CREDITS -->
 	    <category>
 	        <pattern>* THEY ^ IMPORTANT ^</pattern>
 	        <template>
@@ -79,31 +89,43 @@
         </category>
 
         <category>
-            <pattern>^ WHY * NEED ^ THEM ^</pattern>
-            <template>If you do not earn enough of them, you may not be allowed to continue studying.</template>
+            <pattern>^ NEED ^ THEM ^</pattern>
+            <template>If you do not earn enough credits, you may not be allowed to continue studying.</template>
+        </category>
+
+        <!-- CREDITS FOR PE -->
+        <category>
+            <pattern>* OF THEM * PE ^</pattern>
+            <template>Each PE course is worth 1 credit.</template>
         </category>
 
         <category>
-            <pattern>^ HOW MANY * NEED</pattern>
+            <pattern>* OF THEM * PE ^</pattern>
+            <template><srai>HOW MANY OF THEM DO I GET FOR EACH PE COURSE</srai></template>
+        </category>
+
+        <!-- REQUIRED NUMBER OF CREDITS -->
+        <category>
+            <pattern>* OF THEM * NEEDED ^</pattern>
             <template>
-                <srai>WHAT NUMBER OF THEM DO I NEED</srai>
+                <srai><star/> OF THEM <star index="2"/> NEED <star index="3"/></srai>
             </template>
         </category>
 
         <category>
-            <pattern>^ HOW MANY * NEEDED</pattern>
+            <pattern>* OF THEM * HAVE TO * ^</pattern>
             <template>
-                <srai>WHAT NUMBER OF THEM DO I NEED</srai>
+                <srai><star/> OF THEM <star index="2"/> NEED <star index="4"/></srai>
             </template>
         </category>
-
+        
         <category>
-            <pattern>* OF THEM * NEEDED</pattern>
+            <pattern>* OF THEM * NEED ^</pattern>
             <template>
-                <srai>WHAT NUMBER OF THEM DO I NEED</srai>
+                <srai><star/> OF THEM <star index="2"/> NEED PER SEMESTER</srai> <srai><star/> OF THEM <star index="2"/> NEED PER STUDY</srai>
             </template>
         </category>
-
+        
         <category>
             <pattern>* OF THEM * NEED _ SEMESTER ^</pattern>
             <template>
@@ -123,28 +145,7 @@
             <template>You need to earn 2 credits for PE courses during your bachelor's degree.</template>
         </category>
 
-        <category>
-            <pattern>* OF THEM * HAVE TO _ PE ^</pattern>
-            <template><srai>HOW MANY OF THEM DO I NEED FOR PE</srai></template>
-        </category>
-
-        <category>
-            <pattern>* OF THEM * PE COURSE ^</pattern>
-            <template>Each PE course is worth 1 credit.</template>
-        </category>
-
-        <category>
-            <pattern>* OF THEM * PE COURSES ^</pattern>
-            <template><srai>HOW MANY OF THEM DO I GET FOR EACH PE COURSE</srai></template>
-        </category>
-
-        <category>
-            <pattern>* OF THEM * NEED ^</pattern>
-            <template>
-                <srai><star/> OF THEM <star index="2"/> NEED PER SEMESTER</srai> <srai><star/> OF THEM <star index="2"/> NEED PER STUDY</srai>
-            </template>
-        </category>
-        
+        <!-- HOW TO OBTAIN CREDITS -->
         <category>
             <pattern>* GET THEM ^</pattern>
             <template><srai>HOW CAN I EARN THEM</srai></template>
@@ -157,6 +158,7 @@
             </template>
         </category>
         
+        <!-- NUMBER OF CREDITS PER COURSE -->
         <category>
             <pattern>* THEM * COURSE ^</pattern>
             <template>
@@ -170,6 +172,7 @@
             <template><srai>HOW MANY OF THEM DO I GET FOR A COURSE</srai></template>
         </category>
         
+        <!-- RECOMMENDED NUMBER OF CREDITS -->
         <category>
             <pattern>* THEM * RECOMMENDED ^</pattern>
             <template>
@@ -200,28 +203,34 @@
         </category>
         
         <category>
-            <pattern>^ IS * THEM ^ ENOUGH ^</pattern>
-            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF CREDITS</srai></template>
+            <pattern>* THEM ^ ENOUGH ^</pattern>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF THEM</srai></template>
+        </category>
+
+        <category>
+            <pattern>* ENOUGH ^ THEM ^</pattern>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF THEM</srai></template>
         </category>
         
         <category>
             <pattern>^ IS * THEM ^ OK ^</pattern>
-            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF CREDITS</srai></template>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF THEM</srai></template>
         </category>
 
         <category>
             <pattern>^ IS * THEM ^ FINE ^</pattern>
-            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF CREDITS</srai></template>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF THEM</srai></template>
         </category>
 
         <category>
             <pattern>^ IS * THEM ^ GOOD ^</pattern>
-            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF CREDITS</srai></template>
+            <template><srai>WHAT IS THE RECOMMENDED NUMBER OF THEM</srai></template>
         </category>
         
+        <!-- LIMIT OF CREDITS -->
         <category>
             <pattern>* MAXIMUM ^ OF THEM ^</pattern>
-            <template>There is a limit of 60 credits per semester. However, this amount is far above the recommended amount of credits per semester.</template>
+            <template>There is a limit of 60 credits per semester. Nevertheless, this amount is far above the recommended amount of credits per semester.</template>
         </category>
     
         <category>

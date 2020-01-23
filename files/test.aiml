@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+<category>
+    <pattern>XSTARTEST * * *</pattern>
+    <template>
+        1: '<star/>' 2: '<star index="2"/>' 3: '<star index="3"/>'
+    </template>
+</category>
+
+
+<category>
+    <pattern>XPRECEDENCETEST ^</pattern>
+    <template>1</template>
+</category>
+
+<category>
+    <pattern>XPRECEDENCETEST *</pattern>
+    <template>2</template>
+</category>
+
+<category>
+    <pattern>XPRECEDENCETEST ^ TEST</pattern>
+    <template>3</template>
+</category>
+
+<category>
+    <pattern>XPRECEDENCETEST * TEST</pattern>
+    <template>4</template>
+</category>
+
+<category>
+    <pattern>XPRECEDENCETEST * TEST2</pattern>
+    <template>5</template>
+</category>
+
+</aiml>
