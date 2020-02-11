@@ -1,124 +1,337 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+    <!-- REDIRECT TO HELP IN IS.MUNI.CZ -->
     <category>
-        <pattern>^ WHEN ^ REGISTER ^</pattern>
-        <template>
-            <think><set name="topic">registration</set></think>
-            <srai>WHEN DOES IT START</srai>
-        </template>
+        <pattern>XREDIRECTHELP</pattern>
+        <topic>REGISTRATION</topic>
+        <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here: https://is.muni.cz/auth/help/student/registrace?lang=en</template>
     </category>
     
     <category>
-        <pattern>^ HAVE TO REGISTER ^</pattern>
-        <template><srai><star/> NEED REGISTRATION <star index="2"/></srai></template>
+        <pattern>*</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>XREDIRECTHELP</srai></template>
+    </category>
+
+    <!-- WHERE TO REGISTER COURSES -->
+    <category>
+        <pattern># WHERE # REGISTER ^</pattern>
+        <template>Courses can be registered at the following link: https://is.muni.cz/auth/student/zapis?lang=en</template>
     </category>
     
     <category>
-        <pattern>^ TO REGISTER ^</pattern>
-        <template><srai><star/> REGISTRATION <star index="2"/></srai></template>
+        <pattern># WHERE * REGISTRATION ^</pattern>
+        <template><srai>WHERE CAN I REGISTER COURSES</srai></template>
     </category>
 
     <category>
-        <pattern>* A REGISTRATION ^</pattern>
+        <pattern># HOW * REGISTER ^</pattern>
+        <template><srai>WHERE CAN I REGISTER COURSES</srai></template>
+    </category>
+
+    <category>
+        <pattern># HOW * REGISTRATION ^</pattern>
+        <template><srai>WHERE CAN I REGISTER COURSES</srai></template>
+    </category>
+
+    <!-- CANCEL REGISTERED COURSES -->
+    <category>
+        <pattern># CANCEL # REGISTERED ^</pattern>
+        <template>
+            By registration for a course, you only express your interest in this course.
+            It can be canceled during the periods "Registration for courses", "Course enrolment period" and "Course enrolment changes".
+        </template>
+    </category>    
+
+    <category>
+        <pattern># CANCEL # REGISTER ^</pattern>
+        <template><srai>CAN I CANCEL REGISTERED COURSES</srai></template>
+    </category>    
+
+    <category>
+        <pattern># CANCEL # REGISTRATION ^</pattern>
+        <template><srai>CAN I CANCEL REGISTERED COURSES</srai></template>
+    </category> 
+
+    <category>
+        <pattern># REGISTERED # CANCELED ^</pattern>
+        <template><srai>CAN I CANCEL REGISTERED COURSES</srai></template>
+    </category>    
+
+    <!-- WHEN TO REGISTER COURSES -->
+    <category>
+        <pattern># WHEN # REGISTER ^</pattern>
+        <template>
+            You can register for courses during the periods "Registration for courses", "Course enrolment period" and "Course enrolment changes". 
+            These periods can be found in the term calendars: https://is.muni.cz/auth/predmety/obdobi?lang=en 
+            Please, mind that in the first semesters, your registration period begins a few days later than specified in the calendars because of the <set name="topic">registration waves</set>.
+            Would you like to know more about them?                         
+        </template> 
+    </category>
+
+    <!-- PREREQUISITES -->
+    <category>
+        <pattern>CAN * REGISTER ^</pattern>
+        <template>
+            You can register for any course in which you are interested, but you will not be allowed to enroll it unless you meet its prerequisites. 
+            Would you like to know more about the <set name="topic">prerequisites</set>?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* CAN * REGISTER ^</pattern>
+        <template><srai>CAN I REGISTER FOR A COURSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>POSSIBLE * REGISTER ^</pattern>
+        <template><srai>CAN I REGISTER FOR A COURSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>* POSSIBLE * REGISTER ^</pattern>
+        <template><srai>CAN I REGISTER FOR A COURSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>ALLOWED * REGISTER ^</pattern>
+        <template><srai>CAN I REGISTER FOR A COURSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALLOWED * REGISTER ^</pattern>
+        <template><srai>CAN I REGISTER FOR A COURSE</srai></template>
+    </category>
+
+    <!-- REGISTRATION PERIOD -->
+    <category>
+        <pattern>* IT ^ PERIOD ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template>
+            The start and the end day of registration period depends on the faculty. 
+            You can find more detailed information here: https://is.muni.cz/auth/predmety/obdobi?lang=en
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN * IT ^ START ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHEN * IT ^ START ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHEN * IT ^ STARTS ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHEN * IT ^ STARTS ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>START ^ IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* START ^ IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <!-- END OF REGISTRATION -->
+    <category>
+        <pattern>WHEN * IT ^ END ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHEN * IT ^ END ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHEN * IT ^ ENDS ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHEN * IT ^ ENDS ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>END ^ IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* END ^ IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHEN IS THE REGISTRATION PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>REGISTRATION ^</pattern>
+        <template>
+            <think><set name="topic">registration</set></think>
+            <srai>IT <star/></srai>
+        </template>
+    </category>
+
+    <!-- DETECT TOPIC -->
+    <category>
+        <pattern>_ REGISTRATION ^</pattern>
+        <template>
+            <think><set name="topic">registration</set></think>
+            <srai><star/> IT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>A REGISTRATION ^</pattern>
+        <template>
+            <think><set name="topic">registration</set></think>
+            <srai>IT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ A REGISTRATION ^</pattern>
+        <template>
+            <think><set name="topic">registration</set></think>
+            <srai><star/> IT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THE REGISTRATION ^</pattern>
+        <template>
+            <think><set name="topic">registration</set></think>
+            <srai>IT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ THE REGISTRATION ^</pattern>
         <template>
             <think><set name="topic">registration</set></think>
             <srai><star/> IT <star index="2"/></srai>
         </template>
     </category>
     
+    <!-- WHAT IS IT -->    	 
     <category>
-        <pattern>* THE REGISTRATION ^</pattern>
-        <template>
-            <think><set name="topic">registration</set></think>
-            <srai><star/> IT <star index="2"/></srai>
-        </template>
+	    <pattern># HELP ME WITH IT ^</pattern>
+        <topic>REGISTRATION</topic>
+	    <template><srai>WHAT IS IT</srai></template>
     </category>
 
     <category>
-        <pattern>* REGISTRATION ^</pattern>
-        <template>
-            <think><set name="topic">registration</set></think>
-            <srai><star/> IT <star index="2"/></srai>
-        </template>
+        <pattern>WHAT ^ IS IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template>By registration for a course, you express your interest in this course. <srai>WHAT IS IT GOOD FOR</srai></template>
     </category>
-    
-	<topic name="registration">
-	   <category>
-            <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
-            <template><srai>WHAT IS IT</srai></template>
-        </category>
-        
-	    <category>
-	        <pattern>^ WHAT IS IT ^</pattern>
-	        <template>By registering a course, you express your interest in this course. <srai>WHAT IS IT GOOD FOR</srai></template>
-        </category>
-        
-        <category>
-            <pattern>^ WHAT IS IT GOOD FOR ^</pattern>
-            <template>When the number of students who want to enroll a course with limited capacity exceeds its capacity, the students who registered the course first will be prioritized.</template>
-        </category>
-        
-        <category>
-            <pattern>* BENEFITS OF IT ^</pattern>
-            <template><srai>WHAT IS IT GOOD FOR</srai></template>
-        </category>
-        
-        <category>
-            <pattern>* NEED IT ^</pattern>
-            <template><srai>WHAT IS IT GOOD FOR</srai></template>
-        </category>
-        
-        <category>
-            <pattern>* USE OF IT ^</pattern>
-            <template><srai>WHAT IS IT GOOD FOR</srai></template>
-        </category>
-        
-        <category>
-            <pattern>* IT OPTIONAL ^</pattern>
-            <template>The registration of courses is optional. However, it is highly recommended for courses with limited capacity.</template>
-        </category>
 
-        <category>
-            <pattern>* IT NEEDED ^</pattern>
-            <template><srai>IS IT OPTIONAL</srai></template>
-        </category>
-    
-        <category>
-            <pattern>* IT REQUIRED ^</pattern>
-            <template><srai>IS IT OPTIONAL</srai></template>
-        </category>
+    <category>
+        <pattern>* WHAT ^ IS IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
 
-        <category>
-            <pattern>* IT COMPULSORY ^</pattern>
-            <template><srai>IS IT OPTIONAL</srai></template>
-        </category>
-        
-        <category>
-            <pattern>* IT VOLUNTARY ^</pattern>
-            <template><srai>IS IT OPTIONAL</srai></template>
-        </category>
-        
-        <category>
-        <pattern>^ WHEN ^ IT ^</pattern>
-        <template>
-            Courses are registered during the period "Registration for courses". This period can be found in the schedule. 
-            Please, mind that in the first semesters, your Registration period begins a few days later than specified in schedule because of the <set name="topic">registration waves</set>.
-            <button>
-                <text>Click here to show schedule</text>
-                <url>https://is.muni.cz/auth/predmety/obdobi</url>
-            </button>
-        </template>
-        </category>
+    <category>
+        <pattern>SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
 
-    	<category>
-    	    <pattern>*</pattern>
-    	    <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here: 
-    	        <link>
-    	            <text>HELP - Registration and Enrollment</text> 
-    	            <url>https://is.muni.cz/auth/help/student/registrace?lang=en</url>
-                </link>
-    	    </template>
-        </category>
-	</topic>
-	
+    <category>
+        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <!-- WHAT IS IT GOOD FOR -->
+    <category>
+        <pattern>WHAT IS IT GOOD FOR ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template>When the number of students who want to enroll a course with limited capacity exceeds its capacity, the students who registered the course first will be prioritized.</template>
+    </category>
+
+    <category>
+        <pattern>* WHAT IS IT GOOD FOR ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHAT IS IT GOOD FOR</srai></template>
+    </category>
+
+    <category>
+        <pattern>* BENEFITS * IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHAT IS IT GOOD FOR</srai></template>
+    </category>
+
+    <category>
+        <pattern>* USE OF IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>WHAT IS IT GOOD FOR</srai></template>
+    </category>
+
+    <!-- IS IT OPTIONAL-->
+    <category>
+        <pattern>IS IT OPTIONAL ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template>The registration for courses is optional. However, it is highly recommended for courses with limited capacity.</template>
+    </category>
+
+    <category>
+        <pattern>* IT OPTIONAL ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* IT NEEDED ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* NEED IT ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* IT COMPULSORY ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* IT VOLUNTARY ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* IT REQUIRED ^</pattern>
+        <topic>REGISTRATION</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
 </aiml>

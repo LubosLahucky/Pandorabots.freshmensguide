@@ -1,4 +1,361 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
+    <!-- REDIRECT TO HELP IN IS.MUNI.CZ -->
+    <category>
+        <pattern>XREDIRECTHELP</pattern>
+        <topic>ENROLLMENT</topic>
+        <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here: https://is.muni.cz/auth/help/student/registrace?lang=en</template>
+    </category>
+    
+    <category>
+        <pattern>*</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>XREDIRECTHELP</srai></template>
+    </category>
+
+    <!-- WHERE TO ENROLL COURSES -->
+    <category>
+        <pattern># WHERE # ENROLL ^</pattern>
+        <template>Courses can be enrolled at the following link: https://is.muni.cz/auth/student/zapis?lang=en</template>
+    </category>
+    
+    <category>
+        <pattern># WHERE # ENROLLMENT ^</pattern>
+        <template><srai>WHERE CAN I ENROLL COURSES</srai></template>
+    </category>
+
+    <category>
+        <pattern>HOW * ENROLL ^</pattern>
+        <template><srai>WHERE CAN I ENROLL COURSES</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HOW * ENROLL ^</pattern>
+        <template><srai>WHERE CAN I ENROLL COURSES</srai></template>
+    </category>
+
+    <category>
+        <pattern>HOW * ENROLLMENT WORKS ^</pattern>
+        <template><srai>WHERE CAN I ENROLL COURSES</srai></template>
+    </category>
+
+    <category>
+        <pattern>* HOW * ENROLLMENT WORKS ^</pattern>
+        <template><srai>WHERE CAN I ENROLL COURSES</srai></template>
+    </category>
+
+    <category>
+        <pattern>HOW * DO ^ ENROLLMENT ^</pattern>
+        <template><srai>WHERE CAN I ENROLL COURSES</srai></template>
+    </category>
+
+    <category>
+        <pattern>_ HOW * DO ^ ENROLLMENT ^</pattern> <!-- TODO: refactor -->
+        <template><srai>WHERE CAN I ENROLL COURSES</srai></template>
+    </category>
+
+    <!-- AUTOMATIC ENROLLMENT -->
+    <category>
+        <pattern># MANUALLY ^</pattern>
+        <template>
+            You do not have to enroll courses manually.
+            The courses that you registered for and whose prerequisites you meet are automatically enrolled every night during the periods "Course enrolment period" and "Course enrolment changes".
+        </template>
+    </category>
+
+    <category>
+        <pattern># MANUAL ^</pattern>
+        <template><srai>DO I HAVE TO ENROLL COURSES MANUALLY</srai></template>
+    </category>
+
+    <category>
+        <pattern># AUTOMATIC ^</pattern>
+        <template><srai>DO I HAVE TO ENROLL COURSES MANUALLY</srai></template>
+    </category>
+
+    <category>
+        <pattern># AUTOMATICALLY ^</pattern>
+        <template><srai>DO I HAVE TO ENROLL COURSES MANUALLY</srai></template>
+    </category>
+    
+    <!-- CANCEL ENROLLED COURSES -->
+    <category>
+        <pattern># CANCEL # ENROLLED ^</pattern>
+        <template>
+            Enrolled courses can be canceled during the periods "Course enrolment period" and "Course enrolment changes".
+        </template>
+    </category>    
+
+    <category>
+        <pattern># CANCEL # ENROLL ^</pattern>
+        <template><srai>CAN I CANCEL ENROLLED COURSES</srai></template>
+    </category>    
+
+    <category>
+        <pattern># CANCEL # ENROLLMENT ^</pattern>
+        <template><srai>CAN I CANCEL ENROLLED COURSES</srai></template>
+    </category> 
+
+    <category>
+        <pattern># ENROLLED # CANCELED ^</pattern>
+        <template><srai>CAN I CANCEL ENROLLED COURSES</srai></template>
+    </category>    
+
+    <!-- WHEN TO ENROLL COURSES -->
+    <category>
+        <pattern># WHEN # ENROLL ^</pattern>
+        <template>
+            Courses are enrolled during the periods "Course enrolment period" and "Course enrolment changes".
+            These periods can be found in the term calendars: https://is.muni.cz/auth/predmety/obdobi?lang=en
+            <srai>DO I HAVE TO ENROLL COURSES MANUALLY</srai>
+        </template> 
+    </category>
+
+    <!-- PREREQUISITES -->
+    <category>
+        <pattern>CAN * ENROLL ^</pattern>
+        <template>
+            You can enroll a course if you meet its prerequisites. 
+            <srai>DO I HAVE TO ENROLL COURSES MANUALLY</srai>
+            Would you like to know more about the <set name="topic">prerequisites</set>?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* CAN * ENROLL ^</pattern>
+        <template><srai>CAN I ENROLL A COURSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>POSSIBLE * ENROLL ^</pattern>
+        <template><srai>CAN I ENROLL A COURSE</srai></template>
+    </category>
+
+        <category>
+        <pattern>* POSSIBLE * ENROLL ^</pattern>
+        <template><srai>CAN I ENROLL A COURSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>ALLOWED * ENROLL ^</pattern>
+        <template><srai>CAN I ENROLL A COURSE</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ALLOWED * ENROLL ^</pattern>
+        <template><srai>CAN I ENROLL A COURSE</srai></template>
+    </category>
+
+    <!-- ENROLLMENT PERIOD -->
+    <category>
+        <pattern>* IT ^ PERIOD ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template>
+            The start and the end day of Course enrollment period depends on the faculty. 
+            You can find more detailed information here: https://is.muni.cz/auth/predmety/obdobi?lang=en
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN * IT ^ START ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHEN * IT ^ START ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHEN * IT ^ STARTS ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHEN * IT ^ STARTS ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>START ^ IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* START ^ IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <!-- END OF ENROLLMENT -->
+    <category>
+        <pattern>WHEN * IT ^ END ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHEN * IT ^ END ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHEN * IT ^ ENDS ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHEN * IT ^ ENDS ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>END ^ IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>* END ^ IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHEN IS THE ENROLLMENT PERIOD</srai></template>
+    </category>
+
+    <category>
+        <pattern>ENROLLMENT ^</pattern>
+        <template>
+            <think><set name="topic">ENROLLMENT</set></think>
+            <srai>IT <star/></srai>
+        </template>
+    </category>
+
+    <!-- DETECT TOPIC -->
+    <category>
+        <pattern>_ ENROLLMENT ^</pattern>
+        <template>
+            <think><set name="topic">ENROLLMENT</set></think>
+            <srai><star/> IT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>A ENROLLMENT ^</pattern>
+        <template>
+            <think><set name="topic">ENROLLMENT</set></think>
+            <srai>IT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ A ENROLLMENT ^</pattern>
+        <template>
+            <think><set name="topic">ENROLLMENT</set></think>
+            <srai><star/> IT <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>THE ENROLLMENT ^</pattern>
+        <template>
+            <think><set name="topic">ENROLLMENT</set></think>
+            <srai>IT <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ THE ENROLLMENT ^</pattern>
+        <template>
+            <think><set name="topic">ENROLLMENT</set></think>
+            <srai><star/> IT <star index="2"/></srai>
+        </template>
+    </category>
+    
+    <!-- WHAT IS IT -->    	 
+    <category>
+	    <pattern># HELP ME WITH IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+	    <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ IS IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template>
+            You have to enroll courses that you want to attend in order to earn <set name="topic">credits</set>.
+            Would you like to know how many credits you need?
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ IS IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <!-- IS IT OPTIONAL-->
+    <category>
+        <pattern>IS IT OPTIONAL ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template>
+            You have to enroll courses in order to earn credits.
+            <srai>DO I HAVE TO ENROLL COURSES MANUALLY</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* IT OPTIONAL ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* IT NEEDED ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* NEED IT ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* IT COMPULSORY ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* IT VOLUNTARY ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
+    <category>
+        <pattern>* IT REQUIRED ^</pattern>
+        <topic>ENROLLMENT</topic>
+        <template><srai>IS IT OPTIONAL</srai></template>
+    </category>
+
 </aiml>

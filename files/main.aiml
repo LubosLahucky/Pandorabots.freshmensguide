@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
     
+    <!-- GREETINGS -->
     <category>
-        <pattern>HI</pattern>
+        <pattern>XGREET</pattern>
         <template>
             <random>
 	            <li>Hi</li>
 	            <li>Hello</li>
-	        </random>! <srai>TELL ME ABOUT YOU</srai> <srai>POLL</srai>
+	        </random>!
+        </template>    
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <think><set name="topic">unknown</set></think>
+            <srai>XGREET</srai> <srai>TELL ME ABOUT YOU</srai> <srai>POLL</srai>
         </template>
     </category>
 
@@ -19,112 +28,143 @@
     </category>
     
 	<category>
-	    <pattern>^ <set>greetings</set> ^</pattern>
+	    <pattern><set>greetings</set> *</pattern>
 	    <template>
 	        <srai>HI</srai>
 	    </template>
     </category>
     
+    <!-- INTRODUCTION -->
+    <category>
+        <pattern># TELL ME # ABOUT YOU ^</pattern>
+        <template>My name is <bot name="name"/> and my task is to help freshmen with their basic questions.</template>
+    </category>
+    
+    <category>
+        <pattern># TELL ME # ABOUT YOURSELF ^</pattern>
+        <template><srai>TELL ME ABOUT YOU</srai></template>
+    </category>
+
+    <!-- POLL -->
     <category>
         <pattern>POLL</pattern>
         <template>
-            <random>
-	            <li>How can I help you</li>
-	            <li>Do you need my help</li>
-	            <li>Would you like to ask me something</li>
-	        </random>
-	        ?            
+            How can I help you?            
         </template>
     </category>
 
+    <!-- PING -->
     <category>
         <pattern>PING</pattern>
         <template>Pong!</template>
     </category>
     
-    <category>
-        <pattern>^ ARE YOU THERE ^</pattern>
-        <template>
-            Yes, I'm here. <srai>POLL</srai></template>
-    </category>
-    
-    <category>
-        <pattern>^ ARE YOU HERE ^</pattern>
-        <template><srai>ARE YOU THERE</srai></template>
-    </category>
-
-    <category>
-        <pattern>^ WAKE UP ^</pattern>
-        <template>
-            I'm awake! <srai>POLL</srai>
-        </template>
-    </category>
-    
+    <!-- POLITENESS -->
     <category>
         <pattern>XTHANKFORPOLITENESS</pattern>
         <template>
             <random>
-                <li>Thank you for your politeness.</li>
-                <li>I like your politeness.</li>
+                <li>Thank you for your politeness by the way.</li>
+                <li>I like your politeness by the way.</li>
                 <li>If only more people were as polite as you are.</li>
-                <li>Many people forget about the word "please" when they ask for my help these days.</li>
+                <li>Many people forget to add the word "please" when they ask for my help these days. I am glad that you are not one of them.</li>
             </random>
         </template>
     </category>
 
     <category>
         <pattern># PLEASE</pattern>
-        <template>
-	        <sr/> <srai>XTHANKFORPOLITENESS</srai>
-        </template>
+        <template><sr/> <srai>XTHANKFORPOLITENESS</srai></template>
     </category>
     
     <category>
         <pattern># PLEASE *</pattern>
+        <template><srai><star/> <star index="2"/></srai> <srai>XTHANKFORPOLITENESS</srai></template>
+    </category>
+    
+    <!-- USER NAME (SET) -->
+    <!-- Currently not working, because Program-Y adds a space character after srai and makes the result of srai start with uppercase 
+    <category>
+        <pattern>MY NAME ^ IS * ^</pattern>
         <template>
-	        <srai><star/> <star index="2"/></srai> <srai>XTHANKFORPOLITENESS</srai>
+            Nice to meet you, <set name="username"><srai>XIMPLODE <uppercase><srai>XFIRST <explode><star index="2"/></explode></srai></uppercase> <lowercase><srai>XREST <explode><star index="2"/></explode></srai></lowercase></srai></set>. <srai>POLL</srai>
         </template>
     </category>
-    
+    -->
     <category>
-        <pattern>WHAT IS YOUR NAME</pattern>
-        <template>My name is <bot name="name"/>.</template>
+        <pattern>MY NAME ^ IS * ^</pattern>
+        <template>
+            Nice to meet you, <set name="username"><formal><star index="2"/></formal></set>. <srai>POLL</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* MY NAME ^ IS * ^</pattern>
+        <template><srai>MY NAME IS <star index="3"/></srai></template>
     </category>
     
+    <!-- USER NAME (GET) -->
     <category>
-        <pattern>^ WHAT ^ IS ^ TOPIC ^</pattern>
+        <pattern>WHAT ^ IS ^ MY NAME</pattern>
         <template>
-            <set name="currenttopic">undefined</set>
-            <condition name="topic">
-                <li value="PE">We do not have any specific topic yet.</li>
-                <li>We are now talking about <get name="topic"/>.</li>
+            <condition name="username">
+                <li value="unknown">You have not told me your name yet.</li>
+                <li>Your name is <get name="username"/>.</li>
             </condition>
         </template>
     </category>
-    
+
     <category>
-        <pattern># TELL ME ABOUT YOU ^</pattern>
-        <template>My name is <bot name="name"/> and my task is to help freshmen with their basic questions.</template>
+        <pattern>* WHAT ^ IS ^ MY NAME</pattern>
+        <template><srai>WHAT IS MY NAME</srai></template>
     </category>
-    
+
+    <!-- BOT'S NAME -->
     <category>
-        <pattern># TELL ME ABOUT YOURSELF ^</pattern>
-        <template><srai>TELL ME ABOUT YOU</srai></template>
+        <pattern>WHAT ^ IS ^ YOUR NAME</pattern>
+        <template>My name is <bot name="name"/>.</template>
     </category>
-    
+
     <category>
-        <pattern>^ WHAT ^ ARE WE TALKING ABOUT ^</pattern>
-        <template><srai>WHAT IS THE TOPIC</srai></template>
+        <pattern>* WHAT ^ IS ^ YOUR NAME</pattern>
+        <template>My name is <bot name="name"/>.</template>
     </category>
-    
-    <category>
-        <pattern>WHAT ^ INTERPRETER *</pattern>
-        <template>My current interpreter is: <program/>.</template>
-    </category>
-    
+
+    <!-- CATEGORIES -->
     <category>
         <pattern>HOW MANY CATEGORIES *</pattern>
         <template>Currently there are <size/> categories.</template>
     </category>
 
+    <category>
+        <pattern>* HOW MANY CATEGORIES *</pattern>
+        <template><srai>HOW MANY CATEGORIES DO YOU HAVE</srai></template>
+    </category>
+
+    <!-- INTERPRETER -->
+    <category>
+        <pattern>WHAT ^ INTERPRETER *</pattern>
+        <template>My current interpreter is: <program/>.</template>
+    </category>
+
+    <category>
+        <pattern>* WHAT INTERPRETER ARE YOU USING</pattern>
+        <template><srai>WHAT INTERPRETER ARE YOU USING</srai></template>
+    </category>
+
+    <!-- SRAIX EXAMPLE -->
+    <category>
+        <pattern>WHAT IS THE TIME</pattern>
+        <template><sraix service="html" hint="head/title/@content">https://is.muni.cz/system/cas.pl</sraix>.</template>
+    </category>
+
+    <!-- PROGRAM-Y SPECIFIC -->
+    <category>
+        <pattern>YINITIALQUESTION</pattern>
+        <template><srai>HI</srai></template>
+    </category>
+
 </aiml>
+
+
+

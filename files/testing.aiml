@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>XSAY *</pattern>
+        <template><star/></template>
+    </category>
+
+    <category>
+        <pattern>XRESETVARIABLE *</pattern>
+        <template>
+            Variable '<star/>' set to '<set><name><star/></name>unknown</set>'.
+        </template>
+    </category>
+
+    <category>
+        <pattern>XSETVARIABLE * *</pattern>
+        <template>
+            Variable '<star/>' set to '<set><name><star/></name><star index="2"/></set>'.
+        </template>
+    </category>
+
+    <category>
+        <pattern>XRESETVARIABLES</pattern>
+        <template>
+            <think>
+                <set name="topic">unknown</set>
+                <set name="username">unknown</set>
+            </think>
+            Variables set to '<get name="topic"/>'.
+        </template>
+    </category>
+</aiml>

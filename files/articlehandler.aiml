@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 	<category>
-        <pattern>XARTICLE *</pattern>
+        <pattern>XREMOVEARTICLE *</pattern>
         <template><star/></template>
     </category>
     
     <category>
-        <pattern>XARTICLE A *</pattern>
+        <pattern>XREMOVEARTICLE A *</pattern>
         <template><star/></template>
     </category>
     
     <category>
-        <pattern>XARTICLE AN *</pattern>
+        <pattern>XREMOVEARTICLE AN *</pattern>
         <template><star/></template>
     </category>
     
     <category>
-        <pattern>XARTICLE THE *</pattern>
+        <pattern>XREMOVEARTICLE THE *</pattern>
         <template><star/></template>
     </category>
 </aiml>

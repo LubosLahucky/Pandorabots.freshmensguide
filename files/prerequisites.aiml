@@ -1,42 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+    <!-- REDIRECT TO HELP IN IS.MUNI.CZ -->
     <category>
-        <pattern>^ ARE PREREQUISITES *</pattern>
+        <pattern>*</pattern>
+        <topic>PREREQUISITES</topic>
+        <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here: https://is.muni.cz/help/student/registrace?lang=en#s_reg_prerekvizity</template>
+    </category>
+
+    <!-- DETECT TOPIC -->
+    <category>
+        <pattern>PREREQUISITES ^</pattern>
         <template>
-            <think><set name="topic">prerequisites</set></think>
-            <srai><star/> ARE THEY <star index="2"/></srai>
+            <think><set name="topic">PREREQUISITES</set></think>
+            <srai>THEY <star/></srai>
         </template>
     </category>
-    
+
     <category>
-        <pattern>* PREREQUISITES</pattern>
+        <pattern>_ PREREQUISITES ^</pattern>
         <template>
-            <think><set name="topic">prerequisites</set></think>
-            <srai><star/> THEM <star index="2"/></srai>
+            <think><set name="topic">PREREQUISITES</set></think>
+            <srai><star/> THEY <star index="2"/></srai>
         </template>
     </category>
-    
-	<topic name="prerequisites">
-	    <category>
-	        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
-	        <template><srai>WHAT IS IT</srai></template>
-        </category>
-	    
-	    <category>
-	        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
-	        <template><srai>TELL ME SOMETHING ABOUT IT</srai></template>
-        </category>
-        
-	    <category>
-	        <pattern>WHAT ARE THEY</pattern>
-	        <template>
-	            The prerequisites of a subject are a set of conditions that must be met in order to enroll the subject.
-	        </template>
-        </category>
-	    
-	    <category>
-	        <pattern>WHAT IS IT</pattern>
-	        <template><srai>WHAT ARE THEY</srai></template>
-        </category>
-	</topic>
+
+    <!-- WHAT IT IS -->    	 
+    <category>
+	    <pattern># HELP ME WITH IT ^</pattern>
+        <topic>PREREQUISITES</topic>
+	    <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME WITH THEM ^</pattern>
+        <topic>PREREQUISITES</topic>
+	    <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ IS IT ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <template>
+            The prerequisite of the subject is a condition that must be met in order to enroll the subject.
+            A typical prerequisite is the successful completion of another subject.
+            Complete list of prerequisites can be found here: https://is.muni.cz/help/student/registrace?lang=en#s_reg_prerekvizity
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ IS IT ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ ARE THEY ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ ARE THEY ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>SOMETHING ^ ABOUT THEM ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <!-- HANDLE ANSWERS -->
+    <category>
+        <pattern># YES ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT THE PREREQUISITES</that>
+        <template><srai>WHAT ARE THEY</srai></template>
+    </category>
+
+    <category>
+        <pattern>NO ^</pattern>
+        <topic>PREREQUISITES</topic>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT THE PREREQUISITES</that>
+        <template>You can ask me another question then.</template>
+    </category>
+
 </aiml>

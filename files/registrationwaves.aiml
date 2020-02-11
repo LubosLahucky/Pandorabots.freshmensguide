@@ -1,42 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+    <!-- REDIRECT TO HELP IN IS.MUNI.CZ -->
     <category>
-	    <pattern>^ REGISTRATION WAVES ^</pattern>
-	    <template>
-	        <think><set name="topic">registration waves</set></think>
-	        <srai><star/> THEY <star index="2"/></srai>
-	    </template>
+        <pattern>*</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here: https://is.muni.cz/auth/help/student/registrace?lang=en#s_reg_vlny</template>
     </category>
-    
-	<topic name="registration waves">
-	    <category>
-	        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
-	        <template><srai>WHAT IS IT</srai></template>
-        </category>
-	    
-	    <category>
-	        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
-	        <template><srai>TELL ME SOMETHING ABOUT IT</srai></template>
-        </category>
-        
-	    <category>
-            <pattern>^ WHAT ARE THEY ^</pattern>
-            <template>In order to favor those students who are approaching the end of their studies and have a lesser (perhaps the last) opportunity to enroll the course, there is a system of registration waves: The longer you study and the more credits you have earned, the sooner you are registered.</template>
-        </category>
 
-        <category>
-            <pattern>^ WHAT IS IT ^</pattern>
-            <template>WHAT ARE THEY</template>
-        </category>
-        
-        <category>
-    	    <pattern>*</pattern>
-    	    <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here:
-    	        <link>
-    	            <text>HELP - Registration Waves</text>
-    	            <url>https://is.muni.cz/auth/help/student/registrace?lang=en#s_reg_vlny</url>
-                </link>
-    	    </template>
-        </category>
-	</topic>
+    <!-- DETECT TOPIC -->
+    <category>
+        <pattern>REGISTRATION WAVES ^</pattern>
+        <template>
+            <think><set name="topic">REGISTRATION WAVES</set></think>
+            <srai>THEY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ REGISTRATION WAVES ^</pattern>
+        <template>
+            <think><set name="topic">REGISTRATION WAVES</set></think>
+            <srai><star/> THEY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <!-- WHAT IT IS -->    	 
+    <category>
+	    <pattern># HELP ME WITH IT ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+	    <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME WITH THEM ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+	    <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ IS IT ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template>In order to favor those students who are approaching the end of their studies and have a lesser (perhaps the last) opportunity to enroll the course, there is a system of registration waves: The longer you study and the more credits you have earned, the sooner you are registered.</template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ IS IT ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ ARE THEY ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ ARE THEY ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>SOMETHING ^ ABOUT THEM ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <!-- HANDLE ANSWERS -->
+    <category>
+        <pattern># YES ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT THEM</that>
+        <template><srai>WHAT ARE THEY</srai></template>
+    </category>
+
+    <category>
+        <pattern>NO ^</pattern>
+        <topic>REGISTRATION WAVES</topic>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT THEM</that>
+        <template>You can ask me another question then.</template>
+    </category>
+
 </aiml>

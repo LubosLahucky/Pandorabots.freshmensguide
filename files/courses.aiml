@@ -1,13 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+    <!-- REDIRECT TO HELP IN IS.MUNI.CZ -->
     <category>
-        <pattern>* COURSE ^</pattern>
-        <template>
-            <think><set name="topic">courses</set></think>
-            <srai><star/> THEM <star index="2"/></srai>
-        </template>
+        <pattern>XREDIRECTHELP</pattern>
+        <topic>COURSES</topic>
+        <template>Unfortunately, I cannot help you with this question. You can try asking differently or try to find the answer here: https://is.muni.cz/auth/napoveda/?lang=en</template>
     </category>
     
+    <category>
+        <pattern>*</pattern>
+        <topic>COURSES</topic>
+        <template><srai>XREDIRECTHELP</srai></template>
+    </category>
+
+    <!-- DETECT TOPIC -->
+    <category>
+        <pattern>$WHICH COURSES *</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai>WHICH OF THEM <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ WHICH COURSES *</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai><star/> WHICH OF THEM <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>$WHAT COURSES *</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai>WHICH OF THEM <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ WHAT COURSES *</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai><star/> WHICH OF THEM <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ARE COURSES *</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai>ARE THEY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ ARE COURSES ^</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai><star/> ARE THEY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>COURSES ARE *</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai>ARE THEY <star/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ COURSES ARE ^</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai><star/> ARE THEY <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>COURSES *</pattern>
+        <template>
+            <think><set name="topic">courses</set></think>
+            <srai>THEY <star/></srai>
+        </template>
+    </category>
+
     <category>
         <pattern>* COURSES ^</pattern>
         <template>
@@ -15,42 +93,168 @@
             <srai><star/> THEM <star index="2"/></srai>
         </template>
     </category>
+
+    <!-- WHICH COURSES SHOULD I REGISTER / ENROLL -->
+    <category>
+        <pattern>WHICH * THEM * PICK ^</pattern>
+        <topic>COURSES</topic>
+        <template>
+            Make sure that you registered for all the recommended compulsory courses.
+            If you want to enroll some extra courses, you can ask me about the catalogue or the most popular courses.
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHICH * THEM * PICK ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM SHOULD I PICK</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHICH * THEM * REGISTER ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM SHOULD I PICK</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHICH * THEM * REGISTER ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM SHOULD I PICK</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHICH * THEM * ENROLL ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM SHOULD I PICK</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHICH * THEM * ENROLL ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM SHOULD I PICK</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHICH * THEM * ENROLLED ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM SHOULD I PICK</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHICH * THEM * ENROLLED ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM SHOULD I PICK</srai></template>
+    </category>
+
+    <!-- MOST POPULAR COURSES -->
+    <category>
+        <pattern>WHICH * THEM * POPULAR ^</pattern>
+        <topic>COURSES</topic>
+        <template>The most popular courses can be found at the following link: https://is.muni.cz/studium_spolec/studenti_nejcasteji_zapisuji?lang=en</template>
+    </category>
+
+    <category>
+        <pattern>* WHICH * THEM * POPULAR ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM ARE THE MOST POPULAR</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHICH * THEM * ENROLLED ^ MOST ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM ARE THE MOST POPULAR</srai></template>
+    </category>
+   
+    <category>
+        <pattern>* WHICH * THEM * ENROLLED ^ MOST ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM ARE THE MOST POPULAR</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHERE * POPULAR ^ THEM ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM ARE THE MOST POPULAR</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHERE * POPULAR ^ THEM ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHICH OF THEM ARE THE MOST POPULAR</srai></template> 
+    </category>
+
+    <!-- WHAT IT IS -->
+    <category>
+	    <pattern># HELP ME WITH IT ^</pattern>
+        <topic>COURSES</topic>
+	    <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME WITH THEM ^</pattern>
+        <topic>COURSES</topic>
+	    <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ IS IT ^</pattern>
+        <topic>COURSES</topic>
+        <template>
+            A course is a unit of teaching that typically lasts one academic term, is led by one or more instructors.
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ IS IT ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ ARE THEY ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ ARE THEY ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>SOMETHING ^ ABOUT THEM ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
+        <topic>COURSES</topic>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
     
-	<topic name="courses">
-	    <category>
-	        <pattern>* SOMETHING ^ ABOUT IT ^</pattern>
-	        <template><srai>WHAT IS IT</srai></template>
-        </category>
-	    
-	    <category>
-	        <pattern>* SOMETHING ^ ABOUT THEM ^</pattern>
-	        <template><srai>TELL ME SOMETHING ABOUT IT</srai></template>
-        </category>
-        
-	    <category>
-	        <pattern>^ WHAT ^ IS IT ^</pattern>
-	        <template><srai>WHAT ARE THEY</srai></template>
-        </category>
-        
-        <category>
-            <pattern>^ WHAT ^ ARE THEY ^</pattern>
-            <template><!--TODO--></template>
-        </category>
-        
-        <category>
-            <pattern>^ WHERE * REGISTER ^ THEM ^</pattern>
-            <template>
-                You can register / enroll courses using this application: 
-                <link>
-                    <text>Registration and Enrollment</text>
-                    <url>https://is.muni.cz/auth/student/zapis?lang=en</url>
-                </link>
-            </template>
-        </category>
-        
-        <category>
-            <pattern>^ HOW * REGISTER ^ THEM ^</pattern>
-            <template><srai>WHERE CAN I REGISTER THEM</srai></template>
-        </category>
-	</topic>
+    <!-- REGISTRATION TEMPLATE -->
+   <category>
+        <pattern># TEMPLATE ^</pattern>
+        <template><srai>WHAT IS IT</srai></template>
+    </category>
+ 
+    <!-- STUDY CATALOGUE -->
+    <category>
+        <pattern># WHERE * CATALOGUE ^</pattern>
+        <template>Catalogue of the courses can be found at the following link: https://is.muni.cz/predmety/katalog?lang=en</template>
+    </category>
 </aiml>

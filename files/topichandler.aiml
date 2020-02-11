@@ -1,211 +1,286 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-
+    <!-- Using IT / THEM with unknown topic -->
     <category>
-        <pattern>_ HELP ME WITH *</pattern>
-        <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
-        </template>
+	    <pattern># HELP ME WITH IT ^</pattern>
+        <topic>unknown</topic>
+	    <template>What do you mean by "it"?</template>
     </category>
 
     <category>
-        <pattern>_ HELPING ME WITH *</pattern>
-        <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
-        </template>
+	    <pattern># HELP ME WITH THEM ^</pattern>
+        <topic>unknown</topic>
+	    <template>What do you mean by "them"?</template>
     </category>
 
     <category>
-        <pattern>_ QUESTION ABOUT *</pattern>
-        <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
-        </template>
+        <pattern>* IT</pattern>
+        <topic>unknown</topic>
+        <template>What do you mean by "it"?</template>
     </category>
+
+    <category>
+        <pattern>* IT *</pattern>
+        <topic>unknown</topic>
+        <template>What do you mean by "it"?</template>
+    </category>
+
+    <category>
+        <pattern>* THEM</pattern>
+        <topic>unknown</topic>
+        <template>What do you mean by "them"?</template>
+    </category>
+
+    <category>
+        <pattern>* THEM *</pattern>
+        <topic>unknown</topic>
+        <template>What do you mean by "them"?</template>
+    </category>
+
     
+    <category>
+	    <pattern># <set>topics</set></pattern>
+        <that>WHAT DO YOU MEAN BY *</that>
+	    <template>
+            <think><set name="topic"><star index="2"/></set></think>
+            Now I understand. <srai><request index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME WITH <set>topics</set> ^</pattern>
+	    <template>
+	        <think><set name="topic"><star index="2"/></set></think>
+	        Do you have any specific questions about it?
+	    </template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME WITH * <set>topics</set> ^</pattern>
+	    <template>
+	        <srai>HELP ME WITH <star index="3"/></srai>
+	    </template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME WITH *</pattern>
+	    <template>
+	        <think><set name="topic"><lowercase><srai>XREMOVEARTICLE <star index="2"/></srai></lowercase></set></think>
+	        Well, I can try to help you, but I do not think I will be very helpful in this area.
+	        I can only help you with questions about <srai>XLISTTOPICS</srai>
+	    </template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME</pattern>
+	    <template>Feel free to ask me questions related to <srai>XLISTTOPICS</srai>.</template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME WITH SOMETHING ^</pattern>
+	    <template><srai>HELP ME</srai></template>
+    </category>
+
+    <category>
+	    <pattern># HELP ME WITH SOMETHING ^ <set>topics</set> ^</pattern>
+	    <template>
+            <srai>HELP ME WITH <star index="3"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ HELPING WITH *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>    
+        </template>
+    </category> 
+
+    <category>
+        <pattern>_ HELPING * WITH *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="3"/></srai>    
+        </template>
+    </category> 
+
     <category>
         <pattern>_ TALK ABOUT *</pattern>
         <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
+            <srai>HELP ME WITH <star index="2"/></srai>    
         </template>
     </category>
 
     <category>
         <pattern># TELL ME ABOUT *</pattern>
         <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
+            <srai>HELP ME WITH <star index="2"/></srai>    
         </template>
     </category>
 
     <category>
-        <pattern>^ I WANT TO KNOW ^ ABOUT *</pattern>
+        <pattern># TELL ME SOMETHING ABOUT *</pattern>
         <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
+            <srai>HELP ME WITH <star index="2"/></srai>    
         </template>
     </category>
 
     <category>
-        <pattern>^ I WOULD LIKE TO KNOW ^ ABOUT *</pattern>
+        <pattern>_ ASK ABOUT *</pattern>
         <template>
-            <srai>HELP ME WITH <star index="2"/></srai>
+            <srai>HELP ME WITH <star index="2"/></srai>    
         </template>
     </category>
 
     <category>
-        <pattern>_ ASK ^ ABOUT *</pattern>
+        <pattern>_ ASK * ABOUT *</pattern>
         <template>
-            <srai>HELP ME WITH <star index="3"/></srai>
+            <srai>HELP ME WITH <star index="3"/></srai>    
         </template>
     </category>
 
     <category>
-        <pattern>_ ASK YOU SOMETHING</pattern>
-        <template><srai>I HAVE A QUESTION</srai></template>
+        <pattern>_ KNOW ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>    
+        </template>
     </category>
 
     <category>
-        <pattern>* ASK ^ QUESTION ^</pattern>
-        <template><srai>I HAVE A QUESTION</srai></template>
+        <pattern>_ KNOW * ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="3"/></srai>    
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ INTERESTED IN *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>    
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ QUESTION ABOUT *</pattern>
+        <template>
+            <srai>HELP ME WITH <star index="2"/></srai>    
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ QUESTION ^</pattern>
+        <template><srai>HELP ME</srai></template>
+    </category>
+
+    <!-- INFO ABOUT QUESTIONS THAT USER CAN ASK -->
+    <category>
+        <pattern>WHAT ^ YOU ^ DO ^</pattern>
+        <template>I can help freshmen with questions about: <srai>XLISTTOPICS</srai>.</template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ YOU ^ DO ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ YOU KNOW ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ YOU KNOW ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT ^ ASK YOU ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ^ ASK YOU ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>QUESTIONS * ASK YOU ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <category>
+        <pattern>* QUESTIONS * ASK YOU ^</pattern>
+        <template><srai>WHAT CAN YOU DO</srai></template>
+    </category>
+
+    <!-- INDEFINITE QUESTIONS -->
+    <category>
+        <pattern>ASK YOU SOMETHING</pattern>
+        <template><srai>HELP ME</srai></template>
+    </category>
+
+    <category>
+        <pattern>* ASK YOU SOMETHING</pattern>
+        <template><srai>HELP ME</srai></template>
     </category>
     
+    <!-- HANDLING RESPONSES -->
     <category>
-        <pattern>* HAVE ^ QUESTION ^</pattern>
+        <pattern># NO ^</pattern>
+        <that>DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
+        <template>I will tell you something about it then. <srai>SOMETHING ABOUT IT</srai></template>
+    </category>
+
+    <category>
+        <pattern>YES</pattern>
+        <that>DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
         <template>Feel free to ask me.</template>
     </category>
 
+    <!-- CURRENT TOPIC -->
     <category>
-        <pattern>^ HELP ME ^</pattern>
-        <template>How can I help you?</template>
-    </category>
-
-    <category>
-        <pattern># HELP ME WITH SOMETHING ^</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
-
-    <category>
-        <pattern>* YOU KNOW SOMETHING ABOUT ^ <set>topics</set> ^</pattern>
+        <pattern>WHAT ^ TOPIC ^</pattern>
         <template>
-            <think><set name="topic"><star index="3"/></set></think>
-            <srai>TELL ME SOMETHING ABOUT IT</srai>
-        </template>
-    </category>
-
-    <category>
-        <pattern><set>topics</set></pattern>
-        <template>
-            <srai>HELP ME WITH <star/></srai>
-        </template>
-    </category>
-
-    <category>
-	    <pattern>HELP ME WITH ^ <set>topics</set> ^</pattern>
-	    <template>
-	        <think><set name="topic"><star index="2"/></set></think>
-	        Do you have any specific questions about it?
-	    </template>
-    </category>
-    
-	<category>
-	    <pattern>HELP ME WITH *</pattern>
-	    <template>
-	        <think><set name="topic"><srai>XARTICLE <star/></srai></set></think>
-	        Well, I can try to help you, but I do not think I will be very helpful in this area.
-	        I can only help you with: <srai>ENUMERATE TOPICS</srai>
-	    </template>
-    </category>
-    
-    <category>
-        <pattern>ENUMERATE TOPICS</pattern>
-        <template>
-            <think><set name="currenttopic">START</set></think>
-            <set name="currenttopic">
-                <map name="topicenumerator">
-                    <get name="currenttopic"/>
-                </map>
-            </set>
-            <condition name="currenttopic">
-                <li value="PE"> and that's all!</li>
-                <li>, <set name="currenttopic"><map name="topicenumerator"><get name="currenttopic"/></map></set><loop/></li>
+            <condition name="topic">
+                <li value="unknown">We do not have any specific topic yet.</li>
+                <li>We are now talking about <get name="topic"/>.</li>
             </condition>
         </template>
     </category>
-    
+
     <category>
-        <pattern>WHAT CAN YOU DO ^</pattern>
+        <pattern>* WHAT ^ TOPIC ^</pattern>
+        <template><srai>WHAT IS THE TOPIC</srai></template>
+    </category> 
+
+    <category>
+        <pattern>WHAT ^ ARE WE TALKING ABOUT ^</pattern>
+        <template><srai>WHAT IS THE TOPIC</srai></template>
+    </category> 
+
+    <category>
+        <pattern>* WHAT ^ ARE WE TALKING ABOUT ^</pattern>
+        <template><srai>WHAT IS THE TOPIC</srai></template>
+    </category> 
+
+    <category>
+        <pattern>XLISTTOPICS</pattern>
         <template>
-            I can help freshmen with questions about: <srai>ENUMERATE TOPICS</srai>
+            <set var="current"><map name="topicenumerator">START</map></set>
+            <think>
+                <set var="current"><map name="topicenumerator"><get var="current"/></map></set>
+                <set var="last"><get var="current"/></set>
+                <set var="current"><map name="topicenumerator"><get var="current"/></map></set>
+            </think>
+            <condition var="current">
+                <li value="END"> and <get var="last"/></li>
+                <li>, <get var="last"/>
+                    <think>
+                        <set var="last"><get var="current"/></set>    
+                        <set var="current"><map name="topicenumerator"><get var="current"/></map></set>
+                    </think>
+                    <loop/>
+                </li>
+            </condition>
         </template>
     </category>
-    
-    <category>
-        <pattern>I DO NOT NEED YOUR HELP</pattern>
-        <template>Why did you write me then? Come back when you have some questions.</template>
-    </category>
-    
-    <category>
-        <that>^ DO YOU NEED MY HELP</that>
-        <pattern># YES ^</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
 
-    <category>
-        <that>^ HOW CAN I HELP YOU</that>
-        <pattern>_ CAN NOT ^</pattern>
-        <template><srai>I DO NOT NEED YOUR HELP</srai></template>
-    </category>
-
-    <category>
-        <that>^ DO YOU NEED MY HELP</that>
-        <pattern># NO ^</pattern>
-        <template><srai>I DO NOT NEED YOUR HELP</srai></template>
-    </category>
-    
-    <category>
-        <that>^ WOULD YOU LIKE TO ASK ME SOMETHING</that>
-        <pattern># YES ^</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
-
-    <category>
-        <that>^ WOULD YOU LIKE TO ASK ME SOMETHING</that>
-        <pattern># NO ^</pattern>
-        <template><srai>I DO NOT NEED YOUR HELP</srai></template>
-    </category>
-    
-    <category>
-        <that>^ DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
-        <pattern># YES ^</pattern>
-        <template><srai>I HAVE A QUESTION</srai></template>
-    </category>
-
-    <category>
-        <that>^ DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT IT</that>
-        <pattern># NO ^</pattern>
-        <template>I will tell you something about it then. <srai>TELL ME SOMETHING ABOUT IT</srai> Feel free to ask more questions about it.</template>
-    </category>
-    
-    <category>
-        <pattern>WHAT * TALK ABOUT</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
-
-    <category>
-        <pattern>$WHAT * HELP ^ WITH ^</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
-
-    <category>
-        <pattern>WHAT * ASK YOU</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
-
-    <category>
-        <pattern>WHAT * YOU KNOW</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
-
-    <category>
-        <pattern>^ YOU CAN DO</pattern>
-        <template><srai>WHAT CAN YOU DO</srai></template>
-    </category>
 </aiml>
